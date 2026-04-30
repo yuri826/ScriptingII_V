@@ -5,3 +5,11 @@ public enum CameraRayOutObject
     Interactable,
     Enemy
 }
+
+public enum GameState
+{
+    Moving,
+    OnDialogue,
+    OnPause,
+    OnInventory
+}

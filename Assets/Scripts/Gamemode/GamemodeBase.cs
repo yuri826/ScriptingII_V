@@ -7,6 +7,8 @@ using Player;
 public class GamemodeBase : MonoBehaviour
 {
     public static GamemodeBase Instance { get; private set; }
+    
+    private GameState gameState = GameState.OnDialogue;
 
     [SerializeField] private PlayerLogic playerPawn;
     [SerializeField] private PlayerCursor playerCursor;
@@ -32,7 +34,14 @@ public class GamemodeBase : MonoBehaviour
 
     public void OnLClick(Vector2 mousePos)
     {
-        playerCursor.OnLClick(mousePos); //Da MissingMethodException por qué si lo encuentra bien omg
+        switch (gameState)
+        {
+            case  GameState.Moving: playerCursor.OnLClick(mousePos);
+                break;
+            
+            case GameState.OnDialogue: uiManager.DialogueClick(); 
+                break;
+        }
     }
 
     public PlayerLogic GetPlayer()
