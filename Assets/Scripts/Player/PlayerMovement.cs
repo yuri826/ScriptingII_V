@@ -3,13 +3,17 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
-[Serializable]
-public class PlayerMovement
+namespace Player
 {
-    public NavMeshAgent agent { get; set; }
-    
-    public void MoveToPoint(Vector3 point)
+    [Serializable]
+    public class PlayerMovement
     {
-        agent.SetDestination(point);
+        public NavMeshAgent agent { get; set; }
+    
+        public void MoveToPoint(Vector3 point)
+        {
+            agent.SetDestination(point);
+        }
     }
+
 }
