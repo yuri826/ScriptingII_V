@@ -120,6 +120,42 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""ActiveSkill1"",
+                    ""type"": ""Button"",
+                    ""id"": ""5eea6645-3e76-48dc-8ca4-b806ed86ea3d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActiveSkill2"",
+                    ""type"": ""Button"",
+                    ""id"": ""f0f9680a-64c4-46be-a636-7589f540f660"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PassiveSkill1"",
+                    ""type"": ""Button"",
+                    ""id"": ""1194017f-70f3-44f0-9e04-6f72cc68264b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PassiveSkill2"",
+                    ""type"": ""Button"",
+                    ""id"": ""4327ed3e-e8c7-4566-8536-c9eba98327b3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Inventory"",
                     ""type"": ""Button"",
                     ""id"": ""d2b6bd02-e468-41d2-a6dc-7339e725f555"",
@@ -187,6 +223,50 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""5c1811cb-ef3b-42c3-903d-d9df6aed3cee"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActiveSkill1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67875b2d-6c3b-4404-addf-8925a7060918"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActiveSkill2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2dc75d03-913f-406d-af42-f0425f342024"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PassiveSkill1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e16f049-e2a5-4d0e-aa88-1fcbad44bb19"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PassiveSkill2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7046a68d-36a1-4827-9325-6212bdfcdd8b"",
                     ""path"": ""<Keyboard>/i"",
                     ""interactions"": """",
@@ -195,6 +275,56 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""HUDInteraction"",
+            ""id"": ""06e74206-956d-41e3-95f4-e26a5c8558c8"",
+            ""actions"": [
+                {
+                    ""name"": ""HUDClick"",
+                    ""type"": ""Value"",
+                    ""id"": ""b53aa8f7-51db-4f25-aa48-70d7c4438e9d"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""7d90b75d-c849-453a-a378-1271e939c172"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HUDClick"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""1766110f-8062-4e7b-824f-672f0790a6a0"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KBM"",
+                    ""action"": ""HUDClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""29f2d4e9-405b-4b81-91a0-5495d50b6282"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KBM"",
+                    ""action"": ""HUDClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -223,12 +353,20 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_lClick = m_Gameplay.FindAction("lClick", throwIfNotFound: true);
         m_Gameplay_MousePosition = m_Gameplay.FindAction("MousePosition", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_ActiveSkill1 = m_Gameplay.FindAction("ActiveSkill1", throwIfNotFound: true);
+        m_Gameplay_ActiveSkill2 = m_Gameplay.FindAction("ActiveSkill2", throwIfNotFound: true);
+        m_Gameplay_PassiveSkill1 = m_Gameplay.FindAction("PassiveSkill1", throwIfNotFound: true);
+        m_Gameplay_PassiveSkill2 = m_Gameplay.FindAction("PassiveSkill2", throwIfNotFound: true);
         m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
+        // HUDInteraction
+        m_HUDInteraction = asset.FindActionMap("HUDInteraction", throwIfNotFound: true);
+        m_HUDInteraction_HUDClick = m_HUDInteraction.FindAction("HUDClick", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
     {
         UnityEngine.Debug.Assert(!m_Gameplay.enabled, "This will cause a leak and performance issues, PlayerInputActions.Gameplay.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_HUDInteraction.enabled, "This will cause a leak and performance issues, PlayerInputActions.HUDInteraction.Disable() has not been called.");
     }
 
     /// <summary>
@@ -307,6 +445,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_lClick;
     private readonly InputAction m_Gameplay_MousePosition;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_ActiveSkill1;
+    private readonly InputAction m_Gameplay_ActiveSkill2;
+    private readonly InputAction m_Gameplay_PassiveSkill1;
+    private readonly InputAction m_Gameplay_PassiveSkill2;
     private readonly InputAction m_Gameplay_Inventory;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
@@ -331,6 +473,22 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/Pause".
         /// </summary>
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/ActiveSkill1".
+        /// </summary>
+        public InputAction @ActiveSkill1 => m_Wrapper.m_Gameplay_ActiveSkill1;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/ActiveSkill2".
+        /// </summary>
+        public InputAction @ActiveSkill2 => m_Wrapper.m_Gameplay_ActiveSkill2;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/PassiveSkill1".
+        /// </summary>
+        public InputAction @PassiveSkill1 => m_Wrapper.m_Gameplay_PassiveSkill1;
+        /// <summary>
+        /// Provides access to the underlying input action "Gameplay/PassiveSkill2".
+        /// </summary>
+        public InputAction @PassiveSkill2 => m_Wrapper.m_Gameplay_PassiveSkill2;
         /// <summary>
         /// Provides access to the underlying input action "Gameplay/Inventory".
         /// </summary>
@@ -370,6 +528,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @ActiveSkill1.started += instance.OnActiveSkill1;
+            @ActiveSkill1.performed += instance.OnActiveSkill1;
+            @ActiveSkill1.canceled += instance.OnActiveSkill1;
+            @ActiveSkill2.started += instance.OnActiveSkill2;
+            @ActiveSkill2.performed += instance.OnActiveSkill2;
+            @ActiveSkill2.canceled += instance.OnActiveSkill2;
+            @PassiveSkill1.started += instance.OnPassiveSkill1;
+            @PassiveSkill1.performed += instance.OnPassiveSkill1;
+            @PassiveSkill1.canceled += instance.OnPassiveSkill1;
+            @PassiveSkill2.started += instance.OnPassiveSkill2;
+            @PassiveSkill2.performed += instance.OnPassiveSkill2;
+            @PassiveSkill2.canceled += instance.OnPassiveSkill2;
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
@@ -393,6 +563,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @ActiveSkill1.started -= instance.OnActiveSkill1;
+            @ActiveSkill1.performed -= instance.OnActiveSkill1;
+            @ActiveSkill1.canceled -= instance.OnActiveSkill1;
+            @ActiveSkill2.started -= instance.OnActiveSkill2;
+            @ActiveSkill2.performed -= instance.OnActiveSkill2;
+            @ActiveSkill2.canceled -= instance.OnActiveSkill2;
+            @PassiveSkill1.started -= instance.OnPassiveSkill1;
+            @PassiveSkill1.performed -= instance.OnPassiveSkill1;
+            @PassiveSkill1.canceled -= instance.OnPassiveSkill1;
+            @PassiveSkill2.started -= instance.OnPassiveSkill2;
+            @PassiveSkill2.performed -= instance.OnPassiveSkill2;
+            @PassiveSkill2.canceled -= instance.OnPassiveSkill2;
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
@@ -429,6 +611,102 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="GameplayActions" /> instance referencing this action map.
     /// </summary>
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // HUDInteraction
+    private readonly InputActionMap m_HUDInteraction;
+    private List<IHUDInteractionActions> m_HUDInteractionActionsCallbackInterfaces = new List<IHUDInteractionActions>();
+    private readonly InputAction m_HUDInteraction_HUDClick;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "HUDInteraction".
+    /// </summary>
+    public struct HUDInteractionActions
+    {
+        private @PlayerInputActions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public HUDInteractionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "HUDInteraction/HUDClick".
+        /// </summary>
+        public InputAction @HUDClick => m_Wrapper.m_HUDInteraction_HUDClick;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_HUDInteraction; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="HUDInteractionActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(HUDInteractionActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="HUDInteractionActions" />
+        public void AddCallbacks(IHUDInteractionActions instance)
+        {
+            if (instance == null || m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Add(instance);
+            @HUDClick.started += instance.OnHUDClick;
+            @HUDClick.performed += instance.OnHUDClick;
+            @HUDClick.canceled += instance.OnHUDClick;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="HUDInteractionActions" />
+        private void UnregisterCallbacks(IHUDInteractionActions instance)
+        {
+            @HUDClick.started -= instance.OnHUDClick;
+            @HUDClick.performed -= instance.OnHUDClick;
+            @HUDClick.canceled -= instance.OnHUDClick;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="HUDInteractionActions.UnregisterCallbacks(IHUDInteractionActions)" />.
+        /// </summary>
+        /// <seealso cref="HUDInteractionActions.UnregisterCallbacks(IHUDInteractionActions)" />
+        public void RemoveCallbacks(IHUDInteractionActions instance)
+        {
+            if (m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="HUDInteractionActions.AddCallbacks(IHUDInteractionActions)" />
+        /// <seealso cref="HUDInteractionActions.RemoveCallbacks(IHUDInteractionActions)" />
+        /// <seealso cref="HUDInteractionActions.UnregisterCallbacks(IHUDInteractionActions)" />
+        public void SetCallbacks(IHUDInteractionActions instance)
+        {
+            foreach (var item in m_Wrapper.m_HUDInteractionActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="HUDInteractionActions" /> instance referencing this action map.
+    /// </summary>
+    public HUDInteractionActions @HUDInteraction => new HUDInteractionActions(this);
     private int m_KBMSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -471,11 +749,54 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPause(InputAction.CallbackContext context);
         /// <summary>
+        /// Method invoked when associated input action "ActiveSkill1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnActiveSkill1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ActiveSkill2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnActiveSkill2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PassiveSkill1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPassiveSkill1(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "PassiveSkill2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPassiveSkill2(InputAction.CallbackContext context);
+        /// <summary>
         /// Method invoked when associated input action "Inventory" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInventory(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "HUDInteraction" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="HUDInteractionActions.AddCallbacks(IHUDInteractionActions)" />
+    /// <seealso cref="HUDInteractionActions.RemoveCallbacks(IHUDInteractionActions)" />
+    public interface IHUDInteractionActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "HUDClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHUDClick(InputAction.CallbackContext context);
     }
 }

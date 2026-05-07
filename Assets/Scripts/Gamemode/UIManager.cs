@@ -17,4 +17,9 @@ public class UIManager : GamemodeSubsystem
     {
         dialogueManager.OnClick();
     }
+    
+    public void StartDialogue(TextAsset inkStory)
+    {
+        dialogueManager.StartStory(inkStory);
+    }
 }

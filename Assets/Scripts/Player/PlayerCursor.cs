@@ -38,6 +38,12 @@ namespace Player
                     print(interactable);
                     playerPawn.MoveToInteractable(rayInfo.rayHit, interactable);
                     break;
+                
+                case CameraRayOutObject.Enemy:
+                    
+                    mainGamemode.GetSkillManager().ExecuteCurrentSkill();
+                    
+                    break;
             }
         }
     } 

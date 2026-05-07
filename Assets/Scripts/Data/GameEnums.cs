@@ -13,3 +13,16 @@ public enum GameState
     OnPause,
     OnInventory
 }
+
+public enum SkillType
+{
+    Active,
+    Passive
+}
+
+public enum SkillNodeState
+{
+    Locked,
+    Unlocked,
+    Acquired
+}

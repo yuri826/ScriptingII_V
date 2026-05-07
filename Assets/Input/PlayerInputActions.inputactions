@@ -34,6 +34,42 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ActiveSkill1",
+                    "type": "Button",
+                    "id": "5eea6645-3e76-48dc-8ca4-b806ed86ea3d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ActiveSkill2",
+                    "type": "Button",
+                    "id": "f0f9680a-64c4-46be-a636-7589f540f660",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PassiveSkill1",
+                    "type": "Button",
+                    "id": "1194017f-70f3-44f0-9e04-6f72cc68264b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PassiveSkill2",
+                    "type": "Button",
+                    "id": "4327ed3e-e8c7-4566-8536-c9eba98327b3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Inventory",
                     "type": "Button",
                     "id": "d2b6bd02-e468-41d2-a6dc-7339e725f555",
@@ -101,6 +137,50 @@
                 },
                 {
                     "name": "",
+                    "id": "5c1811cb-ef3b-42c3-903d-d9df6aed3cee",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActiveSkill1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67875b2d-6c3b-4404-addf-8925a7060918",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActiveSkill2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2dc75d03-913f-406d-af42-f0425f342024",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassiveSkill1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e16f049-e2a5-4d0e-aa88-1fcbad44bb19",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PassiveSkill2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7046a68d-36a1-4827-9325-6212bdfcdd8b",
                     "path": "<Keyboard>/i",
                     "interactions": "",
@@ -109,6 +189,56 @@
                     "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "HUDInteraction",
+            "id": "06e74206-956d-41e3-95f4-e26a5c8558c8",
+            "actions": [
+                {
+                    "name": "HUDClick",
+                    "type": "Value",
+                    "id": "b53aa8f7-51db-4f25-aa48-70d7c4438e9d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "One Modifier",
+                    "id": "7d90b75d-c849-453a-a378-1271e939c172",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HUDClick",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "1766110f-8062-4e7b-824f-672f0790a6a0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "HUDClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "29f2d4e9-405b-4b81-91a0-5495d50b6282",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "HUDClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

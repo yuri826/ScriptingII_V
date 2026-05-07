@@ -4,6 +4,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 enum DialogueState
 {
@@ -12,26 +13,38 @@ enum DialogueState
     Choice
 }
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager:MonoBehaviour
 {
     private DialogueState state = DialogueState.Typing;
     
+    [Header("Story")]
     [SerializeField] private TextAsset inkJSONAsset;
     private Story story;
 
     private string currentLine;
-
     private Coroutine typeRoutine;
-    
+
+    [Header("Components")] 
+    [SerializeField] private GameObject textBox;
     [SerializeField] private GameObject buttonCanvas;
     [SerializeField] private TextMeshProUGUI bodyText;
     [SerializeField] private Button buttonPrefab;
-
-    private void Start()
+    
+    public void StartStory(TextAsset inkJSON) 
     {
-        StartStory(inkJSONAsset);
+        textBox.SetActive(true);
+        state = DialogueState.Typing;
+        story = new Story (inkJSON.text);
+        RefreshView();
     }
 
+    private void EndStory()
+    {
+        textBox.SetActive(false);
+        GamemodeBase.Instance.EndDialogue();
+    }
+
+    //Input
     public void OnClick()
     {
         switch (state)
@@ -47,20 +60,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
     
-    private void StartStory(TextAsset inkJSON) 
-    {
-        state = DialogueState.Typing;
-        story = new Story (inkJSON.text);
-        RefreshView();
-    }
-
-    private void WriteFullText()
-    {
-        if (typeRoutine is not null) StopCoroutine(typeRoutine);
-        bodyText.text = currentLine;
-        
-        EndLine();
-    }
+    
+    #region Story Management
 
     private string ContinueStory()
     {
@@ -92,23 +93,22 @@ public class DialogueManager : MonoBehaviour
     {
         if (story.currentChoices.Count > 0)
         {
-            if (story.currentChoices.Count > 0)
+            foreach (var choice in story.currentChoices)
             {
-                foreach (var choice in story.currentChoices)
-                {
-                    Button button = CreateChoiceView (choice.text.Trim());
+                Button button = CreateChoiceView (choice.text.Trim());
 
-                    var choice1 = choice;
-                    button.onClick.AddListener (delegate { OnClickChoiceButton (choice1); });
-                }
+                var choice1 = choice;
+                button.onClick.AddListener (delegate { OnClickChoiceButton (choice1); });
             }
-
+            
             state = DialogueState.Choice;
         }
         else
         {
             state = DialogueState.CanContinue;
         }
+        
+        if (!story.state.canContinue) EndStory();
     }
 
     private void OnClickChoiceButton (Choice choice) 
@@ -120,7 +120,7 @@ public class DialogueManager : MonoBehaviour
     private Button CreateChoiceView (string text) 
     {
         // Creates the button from a prefab
-        Button choice = Instantiate (buttonPrefab, buttonCanvas.transform, false) as Button;
+        Button choice = Instantiate(buttonPrefab, buttonCanvas.transform, false) as Button;
 
         // Gets the text from the button prefab
         choice.GetComponentInChildren<TextMeshProUGUI>().text = text;
@@ -138,4 +138,6 @@ public class DialogueManager : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
+    
+    #endregion
 }

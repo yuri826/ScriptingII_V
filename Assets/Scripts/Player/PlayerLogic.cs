@@ -20,6 +20,7 @@ namespace Player
 
         public void MoveToPoint(Vector3 point)
         {
+            if (interactableRoutine is not null) StopCoroutine(interactableRoutine);
             playerMovement.MoveToPoint(point);
         }
     

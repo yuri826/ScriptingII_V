@@ -34,9 +34,13 @@ public class CameraLogic : MonoBehaviour
             mouseReturn = hit.point;
             rayHasHit = true;
 
-            if (hit.collider.gameObject.TryGetComponent<InteractableObject>(out InteractableObject interactable))
+            if (hit.collider.gameObject.TryGetComponent(out InteractableObject interactable))
             {
                 outObject = CameraRayOutObject.Interactable;
+            }
+            else if (hit.collider.gameObject.TryGetComponent(out EnemyBase enemy))
+            {
+                outObject = CameraRayOutObject.Enemy;
             }
             else
             {
