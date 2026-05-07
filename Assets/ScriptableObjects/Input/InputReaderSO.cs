@@ -7,6 +7,12 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 {
     private PlayerInputActions inputActions;
     
+    public delegate void OnMove(Vector2 inputDir);
+    public OnMove onMove;
+    
+    public delegate void OnStopMovement(Vector2 inputDir);
+    public OnStopMovement onStopMovement;
+    
     public delegate void OnClickStarted(Vector2 mousePos);
     public OnClickStarted onClickStarted;
     
@@ -18,6 +24,7 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     
     public delegate void OnEquipActiveSkill2(int skillN);
     public OnEquipActiveSkill2 onActiveSkill2;
+    
     private PlayerInputActions.IHUDInteractionActions ihudInteractionActionsImplementation;
 
     private void OnEnable()
@@ -66,6 +73,12 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     public void OnPassiveSkill1(InputAction.CallbackContext context){}
     public void OnPassiveSkill2(InputAction.CallbackContext context){}
     public void OnInventory(InputAction.CallbackContext context){}
+    
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        if (context.performed) onMove?.Invoke(context.ReadValue<Vector2>());
+        if (context.canceled) onStopMovement?.Invoke(Vector2.zero);
+    }
 
     public void EnableHUDInteraction()
     {

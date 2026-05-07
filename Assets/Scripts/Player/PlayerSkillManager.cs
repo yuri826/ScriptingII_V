@@ -30,7 +30,22 @@ public class PlayerSkillManager: GamemodeSubsystem
 
     public void ExecuteCurrentSkill()
     {
-        currentActiveSkill.ExecuteSkill();
+        currentActiveSkill?.ExecuteSkill();
+    }
+
+    public void SetSkill(int slot, PlayerSkill skill)
+    {
+        switch (slot)
+        {
+            case 0:
+                activeSkill1 = skill;
+                break;
+            case 1: 
+                activeSkill2 = skill; 
+                break;
+        }
+        
+        GamemodeBase.Instance.GetHUD().ChangeSkill(slot, skill.icon);
     }
 
     public void AddSkill(PlayerSkill skill)

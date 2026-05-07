@@ -24,15 +24,22 @@ public class GamemodeBase : MonoBehaviour
 
         uiManager.gamemodeParent = this;
         inputManager.gamemodeParent = this;
+        skillManager.gamemodeParent = this;
+        gameHUD.gamemodeParent = this;
+        playerState.gamemodeParent = this;
         
         uiManager.OnAwake();
         inputManager.OnAwake();
+        skillManager.OnAwake();
+        gameHUD.OnAwake();
+        playerState.OnAwake();
     }
 
     private void OnEnable()
     {
         uiManager.OnEnable();
         inputManager.OnEnable();
+        gameHUD.OnEnable();
     }
 
     public void OnLClick(Vector2 mousePos)

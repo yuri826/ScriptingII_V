@@ -9,25 +9,37 @@ namespace Player
     {
         [SerializeField] private PlayerMovement playerMovement;
         [SerializeField] private NavMeshAgent agent;
+        [SerializeField] private Rigidbody rb;
         [SerializeField] private CameraLogic playerCamera;
+
+        [SerializeField] private float walkSpeed;
 
         private Coroutine interactableRoutine;
 
         public void Awake()
         {
             playerMovement.agent = this.agent;
+            playerMovement.rb = this.rb;
         }
 
-        public void MoveToPoint(Vector3 point)
+        private void Start()
+        {
+            GamemodeBase.Instance.GetInputManager().inputReader.onMove += OnMove;
+            GamemodeBase.Instance.GetInputManager().inputReader.onStopMovement += OnMove;
+        }
+
+        private void OnMove(Vector2 inputDir)
         {
             if (interactableRoutine is not null) StopCoroutine(interactableRoutine);
-            playerMovement.MoveToPoint(point);
+            if (agent.hasPath) agent.isStopped = true;
+            playerMovement.Move(inputDir, walkSpeed);
         }
     
         public void MoveToInteractable(Vector3 point,InteractableObject interactable)
         {
             playerMovement.MoveToPoint(point);
-        
+            agent.isStopped = false;
+            
             if (interactableRoutine is not null) StopCoroutine(interactableRoutine);
             interactableRoutine = StartCoroutine(CheckIfDestinationReached(interactable));
         }

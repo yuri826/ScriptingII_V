@@ -12,8 +12,6 @@ public class PlayerSkill : ScriptableObject
     {
         PlayerState playerState = GamemodeBase.Instance.GetPlayerState();
         
-        Debug.Log(playerState);
-        
         if (playerState.currentMana < manaCost) return;
         
         playerState.ChangeMana(-manaCost);

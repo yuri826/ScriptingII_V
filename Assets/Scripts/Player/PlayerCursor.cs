@@ -29,16 +29,13 @@ namespace Player
         
             switch (rayInfo.outType)
             {
-                case CameraRayOutObject.Ground:
-                    playerPawn.MoveToPoint(rayInfo.rayHit);
-                    break;
-            
                 case CameraRayOutObject.Interactable:
                     InteractableObject interactable = rayInfo.outGameObject.GetComponent<InteractableObject>();
                     print(interactable);
                     playerPawn.MoveToInteractable(rayInfo.rayHit, interactable);
                     break;
                 
+                case CameraRayOutObject.Ground:
                 case CameraRayOutObject.Enemy:
                     
                     mainGamemode.GetSkillManager().ExecuteCurrentSkill();

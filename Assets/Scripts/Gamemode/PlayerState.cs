@@ -16,6 +16,7 @@ public class PlayerState : GamemodeSubsystem
     {
         currentMana = maxMana;
         currentHealth = maxHealth;
+        Debug.Log(currentMana);
     }
 
     public void ChangeMana(int value)
