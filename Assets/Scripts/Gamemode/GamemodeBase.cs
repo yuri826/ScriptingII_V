@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -42,6 +43,34 @@ public class GamemodeBase : MonoBehaviour
         gameHUD.OnEnable();
     }
 
+    public void StartManaRegen()
+    {
+        StartCoroutine(ManaRegenRoutine());
+    }
+
+    private IEnumerator ManaRegenRoutine()
+    {
+        while (playerState.currentMana < playerState.maxMana)
+        {
+            yield return new WaitForSeconds(playerState.manaRegenTime);
+            playerState.ChangeMana(playerState.manaRegen);
+        }
+    }
+    
+    public void StartHealthRegen()
+    {
+        StartCoroutine(HealthRegenRoutine());
+    }
+
+    private IEnumerator HealthRegenRoutine()
+    {
+        while (playerState.currentHealth < playerState.maxHealth)
+        {
+            yield return new WaitForSeconds(playerState.healthRegenTime);
+            playerState.ChangeMana(playerState.healthRegen);
+        }
+    }
+    
     public void OnLClick(Vector2 mousePos)
     {
         switch (gameState)

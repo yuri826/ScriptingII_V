@@ -6,9 +6,14 @@ public class PlayerState : GamemodeSubsystem
 {
     [field: SerializeField] public int maxMana { get; set; }
     public int currentMana { get; set; }
+    [field: SerializeField]public int manaRegen { get; set; }
+    [field: SerializeField]public float manaRegenTime { get; set; }
     
     [field: SerializeField] public int maxHealth { get; set; }
     public int currentHealth { get; set; }
+    [field: SerializeField] public int healthRegen { get; set; }
+    [field: SerializeField]public float healthRegenTime { get; set; }
+    
     
     [field: SerializeField] public int XP { get; set; }
 

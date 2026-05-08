@@ -13,6 +13,8 @@ namespace Player
         [SerializeField] private CameraLogic playerCamera;
 
         [SerializeField] private float walkSpeed;
+        
+        [field:SerializeField] public Transform castPoint { get; private set; }
 
         private Coroutine interactableRoutine;
 
@@ -32,6 +34,11 @@ namespace Player
         {
             if (interactableRoutine is not null) StopCoroutine(interactableRoutine);
             if (agent.hasPath) agent.isStopped = true;
+            
+            // if (inputDir != Vector2.zero) this.transform.rotation = 
+            //     Quaternion.LookRotation(new Vector3(inputDir.x,0,inputDir.y), Vector3.up) 
+            //     * Quaternion.Euler(0,90,0);
+            
             playerMovement.Move(inputDir, walkSpeed);
         }
     

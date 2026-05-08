@@ -27,10 +27,15 @@ public class PlayerSkillManager: GamemodeSubsystem
     {
         currentActiveSkill = activeSkillN == 0 ? activeSkill1 : activeSkill2;
     }
-
-    public void ExecuteCurrentSkill()
+    
+    public void ExecuteCurrentSkill(Vector3 mouseRayHit)
     {
-        currentActiveSkill?.ExecuteSkill();
+        currentActiveSkill?.ExecuteSkill(mouseRayHit);
+    }
+
+    public void ExecuteCurrentSkillMouse(Vector3 mouseRayHit)
+    {
+        currentActiveSkill?.ExecuteSkill(mouseRayHit);
     }
 
     public void SetSkill(int slot, PlayerSkill skill)

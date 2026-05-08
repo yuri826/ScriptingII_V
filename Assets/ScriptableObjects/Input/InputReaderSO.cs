@@ -82,14 +82,12 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 
     public void EnableHUDInteraction()
     {
-        inputActions.Gameplay.Disable();
-        inputActions.HUDInteraction.Enable();
+        inputActions.FindAction("LClick").Disable();
     }
     
     public void DisableHUDInteraction()
     {
-        inputActions.Gameplay.Enable();
-        inputActions.HUDInteraction.Disable();
+        inputActions.FindAction("LClick").Enable();
     }
 
     public void OnHUDClick(InputAction.CallbackContext context){}

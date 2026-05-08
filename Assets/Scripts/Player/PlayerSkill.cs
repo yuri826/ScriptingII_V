@@ -20,4 +20,17 @@ public class PlayerSkill : ScriptableObject
         //Move / continue
         //ExecuteSkill
     }
+    
+    public virtual void ExecuteSkill(Vector3 mouseRayHit)
+    {
+        PlayerState playerState = GamemodeBase.Instance.GetPlayerState();
+        
+        if (playerState.currentMana < manaCost) return;
+        
+        playerState.ChangeMana(-manaCost);
+
+        //Check if player is at a nice distance
+        //Move / continue
+        //ExecuteSkill
+    }
 }

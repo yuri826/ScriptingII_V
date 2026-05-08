@@ -38,7 +38,7 @@ namespace Player
                 case CameraRayOutObject.Ground:
                 case CameraRayOutObject.Enemy:
                     
-                    mainGamemode.GetSkillManager().ExecuteCurrentSkill();
+                    mainGamemode.GetSkillManager().ExecuteCurrentSkillMouse(rayInfo.rayHit);
                     
                     break;
             }
