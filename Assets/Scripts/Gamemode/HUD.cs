@@ -37,8 +37,8 @@ public class HUD : GamemodeSubsystem
 
     public override void OnEnable()
     {
-        ActiveSlot1.onClick.AddListener(() => ShowSkillHotbar(ActiveSlot1.transform));
-        ActiveSlot2.onClick.AddListener(() => ShowSkillHotbar(ActiveSlot2.transform));
+        ActiveSlot1.onClick.AddListener(() => ShowSkillHotbar(ActiveSlot1.transform, 0));
+        ActiveSlot2.onClick.AddListener(() => ShowSkillHotbar(ActiveSlot2.transform, 1));
     }
 
     public void EquipSkill(int activeSkillN)
@@ -47,7 +47,7 @@ public class HUD : GamemodeSubsystem
         ActiveSelection.transform.localPosition = Vector3.zero;
     }
     
-    public void ShowSkillHotbar(Transform caller)
+    public void ShowSkillHotbar(Transform caller, int slotN)
     {
         Debug.Log("Show Skill Hotbar1");
         
@@ -62,7 +62,7 @@ public class HUD : GamemodeSubsystem
         else
         {
             isSkillHotbarOpen = true;
-            skillHotbar.ShowIcons(caller);
+            skillHotbar.ShowIcons(caller, slotN);
         }
     }
 

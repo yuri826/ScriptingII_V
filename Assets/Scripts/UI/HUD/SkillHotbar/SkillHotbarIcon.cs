@@ -11,14 +11,15 @@ public class SkillHotbarIcon : MonoBehaviour
     [SerializeField] private PlayerSkill skill;
     [SerializeField] private Image iconImage;
 
-    private int currentSlot;
+    public int currentSlot { get; set; } = 0;
 
     private void Start()
     {
+        iconImage.sprite = skill.icon;
+        
         anim = GetComponent<Animator>();
         button = GetComponent<Button>();
-        button.onClick.AddListener(() => Show(transform));
-        iconImage.sprite = skill.icon;
+        button.onClick.AddListener(EquipSkill);
     }
 
     public void Show(Transform hotbarSocket)

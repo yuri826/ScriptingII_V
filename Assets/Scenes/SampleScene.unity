@@ -1970,6 +1970,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraLogic
   target: {fileID: 150428098}
   offset: {x: -25, y: 21.7, z: -25}
+--- !u!114 &338296537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1640868586206708334, guid: beff33c0fbf0a3e4f974bd6c96a36605, type: 3}
+  m_PrefabInstance: {fileID: 1266341242}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,6 +3769,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761915265}
   m_CullTransparentMesh: 1
+--- !u!114 &779325824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1640868586206708334, guid: beff33c0fbf0a3e4f974bd6c96a36605, type: 3}
+  m_PrefabInstance: {fileID: 570562773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &805029530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6588,7 +6610,9 @@ MonoBehaviour:
     activeSkill2: {fileID: 11400000, guid: d1cd987f2116eb54580b79dd1872d019, type: 2}
   gameHUD:
     ActiveSlot1: {fileID: 2033570738}
+    ActiveSlot1Icon: {fileID: 779325824}
     ActiveSlot2: {fileID: 1266341245}
+    ActiveSlot2Icon: {fileID: 338296537}
     PassiveSlot1: {fileID: 1814246388}
     PassiveSlot2: {fileID: 1664411577}
     ActiveSelection: {fileID: 1619542351}
@@ -7992,6 +8016,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkillIcon (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4030514227107281326, guid: b46fcf60334e6fc40b774d892d79df32, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a14e6ee680df42f4c99bf69bc3d6b9ca, type: 3}
     - target: {fileID: 7706540782641721761, guid: b46fcf60334e6fc40b774d892d79df32, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8072,6 +8100,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8337188851109841076, guid: b46fcf60334e6fc40b774d892d79df32, type: 3}
+      propertyPath: skill
+      value: 
+      objectReference: {fileID: 11400000, guid: e1e0561cbe39ecf46a9de0606480f79f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

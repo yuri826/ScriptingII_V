@@ -13,8 +13,13 @@ public class SkillHotbarManager : MonoBehaviour
     private Coroutine showRoutine;
     private Coroutine hideRoutine;
 
-    public void ShowIcons(Transform hotbarParent)
+    public void ShowIcons(Transform hotbarParent, int slotN)
     {
+        foreach (var t in hotbarIcons)
+        {
+            t.currentSlot = slotN;
+        }
+        
         hotbarSocketParent.SetParent(hotbarParent);
         hotbarSocketParent.localPosition = Vector3.zero;
         StartCoroutine(ShowRoutine());
