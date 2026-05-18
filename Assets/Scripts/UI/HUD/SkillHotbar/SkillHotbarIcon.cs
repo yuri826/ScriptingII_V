@@ -7,8 +7,8 @@ public class SkillHotbarIcon : MonoBehaviour
 {
     private Animator anim;
     private Button button;
-    
-    [SerializeField] private PlayerSkill skill;
+
+    [field: SerializeField] public PlayerSkill skill { get; set; }
     [SerializeField] private Image iconImage;
 
     public int currentSlot { get; set; } = 0;

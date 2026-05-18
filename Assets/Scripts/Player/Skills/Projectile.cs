@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
 
     public void Init(Vector3 direction, float damage)
     {
+        transform.parent = null;
         rb.linearVelocity = direction.normalized * speed;
         this.damage = damage;
     }

@@ -1,16 +1,19 @@
 using System;
 using Interfaces;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Enemy
 {
     public class EnemyBase : MonoBehaviour, IDamageable
     {
-        [SerializeField] private EnemyState enemyState;
-        [SerializeField] private EnemyHUD enemyHUD;
-        [SerializeField] private EnemyLoot enemyLoot;
+        [SerializeField] protected EnemyState enemyState;
+        [SerializeField] protected EnemyHUD enemyHUD;
+        [SerializeField] protected EnemyLoot enemyLoot;
+        
+        protected NavMeshAgent navMeshAgent;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             enemyState.enemyParent = this;
             enemyHUD.enemyParent = this;
@@ -19,15 +22,17 @@ namespace Enemy
             enemyState.OnAwake();
             enemyHUD.OnAwake();
             enemyLoot.OnAwake();
+            
+            navMeshAgent = GetComponent<NavMeshAgent>();
         }
 
-        public void OnDamage(float damage)
+        public virtual void OnDamage(float damage)
         {
             enemyState.ChangeHealth(-damage);
             enemyHUD.UpdateBarFill(enemyState.currentHealth, enemyState.maxHealth);
         }
 
-        public void OnDie()
+        public virtual void OnDie()
         {
             enemyLoot.DropLoot();
             Destroy(gameObject);

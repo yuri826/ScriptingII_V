@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 [Serializable]
 public class PlayerSkillManager: GamemodeSubsystem
 {
-    private List<PlayerSkill> allPlayerSkills;
-    private List<PlayerSkill> allPlayerActiveSkills;
-    private List<PlayerSkill> allPlayerPassiveSkills;
+    private List<PlayerSkill> allPlayerSkills = new List<PlayerSkill>();
+    private List<PlayerSkill> allPlayerActiveSkills = new List<PlayerSkill>();
+    private List<PlayerSkill> allPlayerPassiveSkills = new List<PlayerSkill>();
 
     [SerializeField] private PlayerSkill activeSkill1;
     [SerializeField] private PlayerSkill activeSkill2;
@@ -17,6 +18,10 @@ public class PlayerSkillManager: GamemodeSubsystem
     private PlayerSkill passiveSkill1;
     private PlayerSkill passiveSkill2;
     private PlayerSkill passiveSkill3;
+
+    [SerializeField] private Transform skillPool;
+    [SerializeField] private GameObject skillPoolEntryPrefab;
+    [SerializeField] private SkillHotbarManager hotbarManager;
 
     public override void OnAwake()
     {
@@ -56,6 +61,12 @@ public class PlayerSkillManager: GamemodeSubsystem
     public void AddSkill(PlayerSkill skill)
     {
         allPlayerSkills.Add(skill);
+        
+        //gamemodeParent.InstantiateSkillEntry(skill, skillPool, skillPoolEntryPrefab);
+        
+        SkillHotbarIcon skillEntry = GameObject.Instantiate(skillPoolEntryPrefab, skillPool).GetComponent<SkillHotbarIcon>();
+        skillEntry.skill = skill;
+        hotbarManager.AddIcon(skillEntry);
 
         if (skill.skillType == SkillType.Active)
             allPlayerActiveSkills.Add(skill);

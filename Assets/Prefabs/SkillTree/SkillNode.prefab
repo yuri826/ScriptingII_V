@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 7616123903888725615}
   - component: {fileID: 8218053649879210234}
   - component: {fileID: 1556150383064298502}
-  - component: {fileID: 4699677866373443080}
+  - component: {fileID: 5631208037464380577}
   m_Layer: 5
   m_Name: SkillNode
   m_TagString: Untagged
@@ -144,7 +144,7 @@ MonoBehaviour:
   bgImage: {fileID: 5332055288422969481}
   select: {fileID: 2321700372574108494}
   acquired: {fileID: 5292260861322410762}
---- !u!114 &4699677866373443080
+--- !u!114 &5631208037464380577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,9 +153,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1137638529245010226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a23b4fe14c33e841be8875ad4a76208, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_EditorClassIdentifier: Assembly-CSharp::InputBlockButton
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0

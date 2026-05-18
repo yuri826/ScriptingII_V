@@ -24,6 +24,11 @@ public class SkillHotbarManager : MonoBehaviour
         hotbarSocketParent.localPosition = Vector3.zero;
         StartCoroutine(ShowRoutine());
     }
+
+    public void AddIcon(SkillHotbarIcon skill)
+    {
+        hotbarIcons.Add(skill);
+    }
     
     public void HideIcons()
     {

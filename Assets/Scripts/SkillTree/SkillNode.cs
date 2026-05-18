@@ -25,6 +25,8 @@ public class SkillNode : MonoBehaviour
         button = GetComponent<Button>();
         button.onClick.AddListener(SelectNode);
         skillIcon.sprite = skill.icon;
+        
+        if (nodeState == SkillNodeState.Locked) bgImage.color = new Color(0.2f,0.2f,0.2f,1);
     }
 
     public void AcquireNode()
@@ -32,6 +34,9 @@ public class SkillNode : MonoBehaviour
         foreach (SkillNode node in nextNodes) node.UnlockNode();
 
         nodeState = SkillNodeState.Acquired;
+        
+        bgImage.color = new Color(0.5f,0.5f,0.5f,1);
+        acquired.SetActive(true);
 
         GamemodeBase.Instance.GetSkillManager().AddSkill(skill);
     }
@@ -39,6 +44,7 @@ public class SkillNode : MonoBehaviour
     public void SelectNode()
     {
         treeManager.DeselectAll();
+        treeManager.ShowPanel(this);
         select.SetActive(true);
     }
     
@@ -50,5 +56,6 @@ public class SkillNode : MonoBehaviour
     public void UnlockNode()
     {
         nodeState = SkillNodeState.Unlocked;
+        bgImage.color = new Color(0.5f,0.5f,0.5f,1);
     }
 }

@@ -42,6 +42,8 @@ public class GamemodeBase : MonoBehaviour
         inputManager.OnEnable();
         gameHUD.OnEnable();
     }
+    
+    #region States
 
     public void StartManaRegen()
     {
@@ -71,6 +73,8 @@ public class GamemodeBase : MonoBehaviour
         }
     }
     
+    #endregion
+    
     public void OnLClick(Vector2 mousePos)
     {
         switch (gameState)
@@ -83,11 +87,22 @@ public class GamemodeBase : MonoBehaviour
         }
     }
     
+    #region Skills
+    
     public void OnEquipActiveSkill(int skillN)
     {
         gameHUD.EquipSkill(skillN);
         skillManager.EquipSkill(skillN);
     }
+
+    public void InstantiateSkillEntry(PlayerSkill skill, Transform skillPool, GameObject skillPoolEntryPrefab)
+    {
+        
+    }
+    
+    #endregion
+    
+    #region Dialogues
 
     public void StartDialogue(TextAsset inkStory)
     {
@@ -99,6 +114,8 @@ public class GamemodeBase : MonoBehaviour
     {
         gameState = GameState.Moving;
     }
+    
+    #endregion
 
     public PlayerLogic GetPlayer() {
         return playerPawn;
