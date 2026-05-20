@@ -38,9 +38,9 @@ namespace Inventory
             playerInventory.HideItemPanel();
             
             currentParent.GetComponent<InventorySlot>().isTaken = false;
-            
             currentParent = transform.parent;
-            transform.SetParent(transform.root);
+            
+            transform.SetParent(playerInventory.transform);
             transform.SetAsLastSibling();
             image.raycastTarget = false;
         }

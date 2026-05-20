@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,8 @@ public class HUD : GamemodeSubsystem
 
     [Header("Mana")] [SerializeField] private Image manaImage;
     [Header("Health")] [SerializeField] private Image healthImage;
+    [Header("Money")] [SerializeField] private TextMeshProUGUI moneyText;
+    [Header("XP")] [SerializeField] private TextMeshProUGUI xpText;
     
     [Header("SkillHotbar")]
     [SerializeField] private Transform skillHotbarPool;
@@ -91,5 +94,15 @@ public class HUD : GamemodeSubsystem
                 ActiveSlot2Icon.sprite = skillIcon;
                 break;
         }
+    }
+
+    public void UpdateMoney(int money)
+    {
+        moneyText.text = money.ToString();
+    }
+    
+    public void UpdateXP(int xp)
+    {
+        xpText.text = xp.ToString();
     }
 }

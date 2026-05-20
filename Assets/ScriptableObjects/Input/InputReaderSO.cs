@@ -49,11 +49,7 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 
     public void OnLClick(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            var mousePos = context.ReadValue<Vector2>();
-            onClickStarted?.Invoke(mousePos);
-        }
+        if (context.started) onClickStarted?.Invoke(context.ReadValue<Vector2>());
     }
 
     public void OnMousePosition(InputAction.CallbackContext context){}
@@ -107,11 +103,5 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     {
         inputActions.Gameplay.AddCallbacks(this);
         inputActions.HUDInteraction.RemoveCallbacks(this);
-    }
-
-    public void OnUIClick(InputAction.CallbackContext context)
-    {
-        Debug.Log("OnUIClick");
-        if (context.started) onUIClick?.Invoke(context.ReadValue<Vector2>());
     }
 }

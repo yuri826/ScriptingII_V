@@ -347,7 +347,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""id"": ""06e74206-956d-41e3-95f4-e26a5c8558c8"",
             ""actions"": [
                 {
-                    ""name"": ""UIClick"",
+                    ""name"": ""lClick"",
                     ""type"": ""Value"",
                     ""id"": ""b53aa8f7-51db-4f25-aa48-70d7c4438e9d"",
                     ""expectedControlType"": ""Vector2"",
@@ -364,7 +364,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""UIClick"",
+                    ""action"": ""lClick"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -375,7 +375,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KBM"",
-                    ""action"": ""UIClick"",
+                    ""action"": ""lClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -386,7 +386,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";KBM"",
-                    ""action"": ""UIClick"",
+                    ""action"": ""lClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -425,7 +425,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         // HUDInteraction
         m_HUDInteraction = asset.FindActionMap("HUDInteraction", throwIfNotFound: true);
-        m_HUDInteraction_UIClick = m_HUDInteraction.FindAction("UIClick", throwIfNotFound: true);
+        m_HUDInteraction_lClick = m_HUDInteraction.FindAction("lClick", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -691,7 +691,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     // HUDInteraction
     private readonly InputActionMap m_HUDInteraction;
     private List<IHUDInteractionActions> m_HUDInteractionActionsCallbackInterfaces = new List<IHUDInteractionActions>();
-    private readonly InputAction m_HUDInteraction_UIClick;
+    private readonly InputAction m_HUDInteraction_lClick;
     /// <summary>
     /// Provides access to input actions defined in input action map "HUDInteraction".
     /// </summary>
@@ -704,9 +704,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public HUDInteractionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "HUDInteraction/UIClick".
+        /// Provides access to the underlying input action "HUDInteraction/lClick".
         /// </summary>
-        public InputAction @UIClick => m_Wrapper.m_HUDInteraction_UIClick;
+        public InputAction @lClick => m_Wrapper.m_HUDInteraction_lClick;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -733,9 +733,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Add(instance);
-            @UIClick.started += instance.OnUIClick;
-            @UIClick.performed += instance.OnUIClick;
-            @UIClick.canceled += instance.OnUIClick;
+            @lClick.started += instance.OnLClick;
+            @lClick.performed += instance.OnLClick;
+            @lClick.canceled += instance.OnLClick;
         }
 
         /// <summary>
@@ -747,9 +747,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="HUDInteractionActions" />
         private void UnregisterCallbacks(IHUDInteractionActions instance)
         {
-            @UIClick.started -= instance.OnUIClick;
-            @UIClick.performed -= instance.OnUIClick;
-            @UIClick.canceled -= instance.OnUIClick;
+            @lClick.started -= instance.OnLClick;
+            @lClick.performed -= instance.OnLClick;
+            @lClick.canceled -= instance.OnLClick;
         }
 
         /// <summary>
@@ -875,11 +875,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IHUDInteractionActions
     {
         /// <summary>
-        /// Method invoked when associated input action "UIClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "lClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnUIClick(InputAction.CallbackContext context);
+        void OnLClick(InputAction.CallbackContext context);
     }
 }

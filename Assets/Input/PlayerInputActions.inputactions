@@ -261,7 +261,7 @@
             "id": "06e74206-956d-41e3-95f4-e26a5c8558c8",
             "actions": [
                 {
-                    "name": "UIClick",
+                    "name": "lClick",
                     "type": "Value",
                     "id": "b53aa8f7-51db-4f25-aa48-70d7c4438e9d",
                     "expectedControlType": "Vector2",
@@ -278,7 +278,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "UIClick",
+                    "action": "lClick",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -289,7 +289,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";KBM",
-                    "action": "UIClick",
+                    "action": "lClick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -300,7 +300,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";KBM",
-                    "action": "UIClick",
+                    "action": "lClick",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

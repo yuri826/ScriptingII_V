@@ -38,6 +38,7 @@ public class SkillNode : MonoBehaviour
         bgImage.color = new Color(0.5f,0.5f,0.5f,1);
         acquired.SetActive(true);
 
+        GamemodeBase.Instance.GetPlayerState().ChangeXp(-skill.buyCost);
         GamemodeBase.Instance.GetSkillManager().AddSkill(skill);
     }
 
