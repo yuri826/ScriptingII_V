@@ -27,6 +27,9 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     
     public delegate void OnEquipActiveSkill2(int skillN);
     public OnEquipActiveSkill2 onActiveSkill2;
+
+    public delegate void OnEscapeAction();
+    public OnEscapeAction onEscape;
     
     private PlayerInputActions.IHUDInteractionActions ihudInteractionActionsImplementation;
 
@@ -45,19 +48,37 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
         inputActions.Disable();
         inputActions.Gameplay.Disable();
         inputActions.Gameplay.RemoveCallbacks(this);
+        inputActions.HUDInteraction.RemoveCallbacks(this);
     }
+    
+    #region Basic
 
     public void OnLClick(InputAction.CallbackContext context)
     {
         if (context.started) onClickStarted?.Invoke(context.ReadValue<Vector2>());
     }
-
+    
     public void OnMousePosition(InputAction.CallbackContext context){}
+    
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        if (context.performed) onMove?.Invoke(context.ReadValue<Vector2>());
+        if (context.canceled) onStopMovement?.Invoke(Vector2.zero);
+    }
+
+    public void OnEscape(InputAction.CallbackContext context)
+    {
+        if (context.started) onEscape?.Invoke();
+    }
 
     public void OnPause(InputAction.CallbackContext context)
     {
         if (context.started) onPause?.Invoke();
     }
+    
+    #endregion
+
+    #region Skills
 
     public void OnActiveSkill1(InputAction.CallbackContext context)
     {
@@ -71,14 +92,11 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 
     public void OnPassiveSkill1(InputAction.CallbackContext context){}
     public void OnPassiveSkill2(InputAction.CallbackContext context){}
-    public void OnInventory(InputAction.CallbackContext context){}
-    
-    public void OnMovement(InputAction.CallbackContext context)
-    {
-        if (context.performed) onMove?.Invoke(context.ReadValue<Vector2>());
-        if (context.canceled) onStopMovement?.Invoke(Vector2.zero);
-    }
 
+    #endregion
+
+    #region Mappings / actions
+    
     public void EnableHUDInteraction()
     {
         inputActions.FindAction("LClick").Disable();
@@ -91,8 +109,8 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 
     public void DisableGameplay()
     {
-        inputActions.Gameplay.RemoveCallbacks(this);
-        inputActions.HUDInteraction.AddCallbacks(this);
+        inputActions.Gameplay.Disable();
+        inputActions.HUDInteraction.Enable();
 
         //Para el movimiento del jugador
         InputAction.CallbackContext fakeCtx = new InputAction.CallbackContext();
@@ -101,7 +119,9 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     
     public void EnableGameplay()
     {
-        inputActions.Gameplay.AddCallbacks(this);
-        inputActions.HUDInteraction.RemoveCallbacks(this);
+        inputActions.Gameplay.Enable();
+        inputActions.HUDInteraction.Disable();
     }
+    
+    #endregion
 }

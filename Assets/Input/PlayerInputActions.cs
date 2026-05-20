@@ -156,15 +156,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""d2b6bd02-e468-41d2-a6dc-7339e725f555"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""ab12b898-f5f9-49cb-a84c-d77959c1d717"",
@@ -275,17 +266,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""7046a68d-36a1-4827-9325-6212bdfcdd8b"",
-                    ""path"": ""<Keyboard>/i"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Inventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": ""2D Vector"",
                     ""id"": ""4ca80c61-bd99-48f4-a754-eaeaaa998430"",
                     ""path"": ""2DVector"",
@@ -347,48 +327,26 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ""id"": ""06e74206-956d-41e3-95f4-e26a5c8558c8"",
             ""actions"": [
                 {
-                    ""name"": ""lClick"",
-                    ""type"": ""Value"",
-                    ""id"": ""b53aa8f7-51db-4f25-aa48-70d7c4438e9d"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""667e5dcc-f790-4003-a9f0-a66a9e5d562e"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""One Modifier"",
-                    ""id"": ""7d90b75d-c849-453a-a378-1271e939c172"",
-                    ""path"": ""OneModifier"",
+                    ""name"": """",
+                    ""id"": ""6da590ba-fa05-4c0c-95f4-92b09c730cb0"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""lClick"",
-                    ""isComposite"": true,
+                    ""groups"": "";KBM"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""1766110f-8062-4e7b-824f-672f0790a6a0"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";KBM"",
-                    ""action"": ""lClick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""29f2d4e9-405b-4b81-91a0-5495d50b6282"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";KBM"",
-                    ""action"": ""lClick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -421,11 +379,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_ActiveSkill2 = m_Gameplay.FindAction("ActiveSkill2", throwIfNotFound: true);
         m_Gameplay_PassiveSkill1 = m_Gameplay.FindAction("PassiveSkill1", throwIfNotFound: true);
         m_Gameplay_PassiveSkill2 = m_Gameplay.FindAction("PassiveSkill2", throwIfNotFound: true);
-        m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         // HUDInteraction
         m_HUDInteraction = asset.FindActionMap("HUDInteraction", throwIfNotFound: true);
-        m_HUDInteraction_lClick = m_HUDInteraction.FindAction("lClick", throwIfNotFound: true);
+        m_HUDInteraction_Escape = m_HUDInteraction.FindAction("Escape", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -514,7 +471,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_ActiveSkill2;
     private readonly InputAction m_Gameplay_PassiveSkill1;
     private readonly InputAction m_Gameplay_PassiveSkill2;
-    private readonly InputAction m_Gameplay_Inventory;
     private readonly InputAction m_Gameplay_Movement;
     /// <summary>
     /// Provides access to input actions defined in input action map "Gameplay".
@@ -555,10 +511,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Gameplay/PassiveSkill2".
         /// </summary>
         public InputAction @PassiveSkill2 => m_Wrapper.m_Gameplay_PassiveSkill2;
-        /// <summary>
-        /// Provides access to the underlying input action "Gameplay/Inventory".
-        /// </summary>
-        public InputAction @Inventory => m_Wrapper.m_Gameplay_Inventory;
         /// <summary>
         /// Provides access to the underlying input action "Gameplay/Movement".
         /// </summary>
@@ -610,9 +562,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PassiveSkill2.started += instance.OnPassiveSkill2;
             @PassiveSkill2.performed += instance.OnPassiveSkill2;
             @PassiveSkill2.canceled += instance.OnPassiveSkill2;
-            @Inventory.started += instance.OnInventory;
-            @Inventory.performed += instance.OnInventory;
-            @Inventory.canceled += instance.OnInventory;
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
@@ -648,9 +597,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @PassiveSkill2.started -= instance.OnPassiveSkill2;
             @PassiveSkill2.performed -= instance.OnPassiveSkill2;
             @PassiveSkill2.canceled -= instance.OnPassiveSkill2;
-            @Inventory.started -= instance.OnInventory;
-            @Inventory.performed -= instance.OnInventory;
-            @Inventory.canceled -= instance.OnInventory;
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
@@ -691,7 +637,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     // HUDInteraction
     private readonly InputActionMap m_HUDInteraction;
     private List<IHUDInteractionActions> m_HUDInteractionActionsCallbackInterfaces = new List<IHUDInteractionActions>();
-    private readonly InputAction m_HUDInteraction_lClick;
+    private readonly InputAction m_HUDInteraction_Escape;
     /// <summary>
     /// Provides access to input actions defined in input action map "HUDInteraction".
     /// </summary>
@@ -704,9 +650,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// </summary>
         public HUDInteractionActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "HUDInteraction/lClick".
+        /// Provides access to the underlying input action "HUDInteraction/Escape".
         /// </summary>
-        public InputAction @lClick => m_Wrapper.m_HUDInteraction_lClick;
+        public InputAction @Escape => m_Wrapper.m_HUDInteraction_Escape;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -733,9 +679,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_HUDInteractionActionsCallbackInterfaces.Add(instance);
-            @lClick.started += instance.OnLClick;
-            @lClick.performed += instance.OnLClick;
-            @lClick.canceled += instance.OnLClick;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
         }
 
         /// <summary>
@@ -747,9 +693,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="HUDInteractionActions" />
         private void UnregisterCallbacks(IHUDInteractionActions instance)
         {
-            @lClick.started -= instance.OnLClick;
-            @lClick.performed -= instance.OnLClick;
-            @lClick.canceled -= instance.OnLClick;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
         }
 
         /// <summary>
@@ -853,13 +799,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPassiveSkill2(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Inventory" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInventory(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "Movement" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
@@ -875,11 +814,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     public interface IHUDInteractionActions
     {
         /// <summary>
-        /// Method invoked when associated input action "lClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Escape" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnLClick(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

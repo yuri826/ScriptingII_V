@@ -15,7 +15,7 @@ public class UIManager : GamemodeSubsystem
     
     [Header("Inventory")]
     [SerializeField] private PlayerInventory playerInventory;
-    private bool inInventoryOpened = false;
+    private bool isInventoryOpened = false;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject inventoryInfoPanel;
 
@@ -42,18 +42,18 @@ public class UIManager : GamemodeSubsystem
     {
         if (isSkillTreeOpened) return;
         
-        inInventoryOpened = !inInventoryOpened;
+        isInventoryOpened = !isInventoryOpened;
         
-        if (inInventoryOpened) gamemodeParent.GetInputManager().DisableGameplay();
+        if (isInventoryOpened) gamemodeParent.GetInputManager().DisableGameplay();
         else  gamemodeParent.GetInputManager().EnableGameplay();
         
-        inventoryPanel.SetActive(inInventoryOpened);
+        inventoryPanel.SetActive(isInventoryOpened);
         inventoryInfoPanel.SetActive(false);
     }
 
     public void OpenSkillTree()
     {
-        if (inInventoryOpened) return;
+        if (isInventoryOpened) return;
         
         isSkillTreeOpened = !isSkillTreeOpened;
         
@@ -73,6 +73,18 @@ public class UIManager : GamemodeSubsystem
     public void CloseMenus()
     {
         gamemodeParent.GetInputManager().EnableGameplay();
+        
+        //Inventory
+        isInventoryOpened = false;
+        inventoryPanel.SetActive(false);
+        inventoryInfoPanel.SetActive(false);
+        
+        //SkillTree
+        isSkillTreeOpened = false;
+        skillTreePanel.SetActive(false);
+        skillTreeInfoPanel.SetActive(false);
+        
+        //Shop
         shopManager.HideMenu();
     }
 }

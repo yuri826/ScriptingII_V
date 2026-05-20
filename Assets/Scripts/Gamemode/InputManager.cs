@@ -15,6 +15,7 @@ public class InputManager : GamemodeSubsystem
         inputReader.onPause += gamemodeParent.OnPause;
         inputReader.onActiveSkill1 += gamemodeParent.OnEquipActiveSkill;
         inputReader.onActiveSkill2 += gamemodeParent.OnEquipActiveSkill;
+        inputReader.onEscape += gamemodeParent.GetUiManager().CloseMenus;
     }
     
     public void EnableHUDInteraction()

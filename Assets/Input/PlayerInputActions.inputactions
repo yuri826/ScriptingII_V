@@ -70,15 +70,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "d2b6bd02-e468-41d2-a6dc-7339e725f555",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "ab12b898-f5f9-49cb-a84c-d77959c1d717",
@@ -189,17 +180,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "7046a68d-36a1-4827-9325-6212bdfcdd8b",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "2D Vector",
                     "id": "4ca80c61-bd99-48f4-a754-eaeaaa998430",
                     "path": "2DVector",
@@ -261,48 +241,26 @@
             "id": "06e74206-956d-41e3-95f4-e26a5c8558c8",
             "actions": [
                 {
-                    "name": "lClick",
-                    "type": "Value",
-                    "id": "b53aa8f7-51db-4f25-aa48-70d7c4438e9d",
-                    "expectedControlType": "Vector2",
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "667e5dcc-f790-4003-a9f0-a66a9e5d562e",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
-                    "name": "One Modifier",
-                    "id": "7d90b75d-c849-453a-a378-1271e939c172",
-                    "path": "OneModifier",
+                    "name": "",
+                    "id": "6da590ba-fa05-4c0c-95f4-92b09c730cb0",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "lClick",
-                    "isComposite": true,
+                    "groups": ";KBM",
+                    "action": "Escape",
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "1766110f-8062-4e7b-824f-672f0790a6a0",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KBM",
-                    "action": "lClick",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "29f2d4e9-405b-4b81-91a0-5495d50b6282",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KBM",
-                    "action": "lClick",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         }

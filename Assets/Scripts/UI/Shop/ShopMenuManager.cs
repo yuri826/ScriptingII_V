@@ -25,7 +25,14 @@ namespace UI
         public void ShowMenu(ShopData shopData)
         {
             itemDescriptionPanel.SetActive(false);
-        
+
+            foreach (Transform entry in itemParent)
+            {
+                Destroy(entry.gameObject);
+            }
+            
+            shopEntries.Clear();
+            
             for (int i = 0; i < shopData.itemsToSell.Length; i++)
             {
                 ShopEntryObject entry = Instantiate(shopEntryPrefab, itemParent).GetComponent<ShopEntryObject>();
@@ -55,7 +62,7 @@ namespace UI
         public void HideMenu()
         {
             itemDescriptionPanel.SetActive(false);
-            itemListPanel.SetActive(true);
+            itemListPanel.SetActive(false);
         }
     }
 }
