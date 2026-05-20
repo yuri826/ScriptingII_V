@@ -5,15 +5,22 @@ using UnityEngine;
 [Serializable]
 public class UIManager : GamemodeSubsystem
 {
-    [SerializeField] private PlayerInventory playerInventory;
+    [Header("Dialogue")]
     [SerializeField] private DialogueManager dialogueManager;
 
+    [Header("SkillTree")]
     private bool isSkillTreeOpened = false;
     [SerializeField] private GameObject skillTreePanel;
     [SerializeField] private GameObject skillTreeInfoPanel;
+    
+    [Header("Inventory")]
+    [SerializeField] private PlayerInventory playerInventory;
     private bool inInventoryOpened = false;
     [SerializeField] private GameObject inventoryPanel;
     [SerializeField] private GameObject inventoryInfoPanel;
+
+    [Header("Shop")] 
+    [SerializeField] private ShopMenuManager shopManager;
  
     public PlayerInventory GetPlayerInventory()
     {
@@ -55,5 +62,10 @@ public class UIManager : GamemodeSubsystem
         
         skillTreePanel.SetActive(isSkillTreeOpened);
         skillTreeInfoPanel.SetActive(false);
+    }
+
+    public void OpenShopMenu(ShopData shopData)
+    {
+        shopManager.ShowMenu(shopData);
     }
 }

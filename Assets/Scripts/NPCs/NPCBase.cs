@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NPCBase : InteractableObject
 {
-    [SerializeField] private TextAsset npcInkStory;
+    [SerializeField] protected TextAsset npcInkStory;
     
     public override void OnInteract()
     {
