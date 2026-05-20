@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: HealthPotII
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
   <Name>k__BackingField: Health Potion II
+  <Type>k__BackingField: Consumable
   <Info>k__BackingField: Te cura en plan un trecho. Ni tan mal.
   <Image>k__BackingField: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   <InventorySprite>k__BackingField: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  <BuyPrice>k__BackingField: 0

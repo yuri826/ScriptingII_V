@@ -2,21 +2,44 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopEntryObject : MonoBehaviour
+namespace UI
 {
-    private InventoryItem item;
-
-    [Header("Components")] 
-    [SerializeField] private TextMeshProUGUI nameText;
-    [SerializeField] private TextMeshProUGUI priceText;
-    [SerializeField] private Image itemIconImage;
-
-    public void Init(InventoryItem inventoryItem)
+    public class ShopEntryObject : MonoBehaviour
     {
-        item = inventoryItem;
+        private InventoryItem item;
+        private ShopMenuManager menuManager;
 
-        nameText.text = item.Name;
-        priceText.text = item.BuyPrice.ToString();
-        itemIconImage.sprite = item.Icon;
+        [Header("Components")] 
+        [SerializeField] private Image BG;
+        [SerializeField] private TextMeshProUGUI nameText;
+        [SerializeField] private TextMeshProUGUI priceText;
+        [SerializeField] private Image itemIconImage;
+
+        public void Init(InventoryItem inventoryItem, ShopMenuManager menuManager)
+        {
+            item = inventoryItem;
+            this.menuManager = menuManager;
+            
+            BG.color = new Vector4(0, 0, 0, 0.8f);
+
+            nameText.text = item.Name;
+            priceText.text = item.BuyPrice.ToString();
+            itemIconImage.sprite = item.Icon;
+        }
+
+        public void ShowInfo()
+        {
+            menuManager.ShowInfoPanel(item, this);
+        }
+
+        public void Deselect()
+        {
+            BG.color = new Vector4(0, 0, 0, 0.8f);
+        }
+
+        public void Select()
+        {
+            BG.color = new Vector4(0.5f, 0.5f, 0.5f, 0.8f);
+        }
     }
 }

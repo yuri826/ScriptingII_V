@@ -66,6 +66,13 @@ public class UIManager : GamemodeSubsystem
 
     public void OpenShopMenu(ShopData shopData)
     {
+        gamemodeParent.GetInputManager().DisableGameplay();
         shopManager.ShowMenu(shopData);
+    }
+    
+    public void CloseMenus()
+    {
+        gamemodeParent.GetInputManager().EnableGameplay();
+        shopManager.HideMenu();
     }
 }
