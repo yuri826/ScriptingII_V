@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,12 @@ public class SkillTreeManager : MonoBehaviour
     private SkillNode currentNode;
     
     [SerializeField] private GameObject skillPanel;
+    
+    [Header("InfoPanel")]
+    [SerializeField] private Image abilityImage;
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI descText;
+    [SerializeField] private TextMeshProUGUI priceText;
 
     private void Start()
     {
@@ -22,6 +29,11 @@ public class SkillTreeManager : MonoBehaviour
 
     public void ShowPanel(SkillNode node)
     {
+        abilityImage.sprite = node.skill.icon;
+        titleText.text = node.skill.name;
+        descText.text = node.skill.description;
+        priceText.text = node.skill.buyCost.ToString();
+        
         skillPanel.SetActive(true);
         currentNode = node;
     }

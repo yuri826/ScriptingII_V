@@ -11,6 +11,8 @@ public class InputManager : GamemodeSubsystem
     public override void OnEnable()
     {
         inputReader.onClickStarted += gamemodeParent.OnLClick;
+        inputReader.onUIClick += gamemodeParent.OnLClick;
+        inputReader.onPause += gamemodeParent.OnPause;
         inputReader.onActiveSkill1 += gamemodeParent.OnEquipActiveSkill;
         inputReader.onActiveSkill2 += gamemodeParent.OnEquipActiveSkill;
     }
@@ -25,5 +27,15 @@ public class InputManager : GamemodeSubsystem
     {
         Debug.Log("Out");
         inputReader.DisableHUDInteraction();
+    }
+    
+    public void EnableGameplay()
+    {
+        inputReader.EnableGameplay();
+    }
+
+    public void DisableGameplay()
+    {
+        inputReader.DisableGameplay();
     }
 }

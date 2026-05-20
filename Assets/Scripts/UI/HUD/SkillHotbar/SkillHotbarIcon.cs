@@ -38,6 +38,7 @@ public class SkillHotbarIcon : MonoBehaviour
     private void EquipSkill()
     {
         GamemodeBase.Instance.GetSkillManager().SetSkill(currentSlot, skill);
+        GamemodeBase.Instance.OnEquipActiveSkill(currentSlot);
     }
 
     private IEnumerator HideRoutine(Transform poolPosition)

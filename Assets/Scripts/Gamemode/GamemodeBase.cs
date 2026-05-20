@@ -77,6 +77,8 @@ public class GamemodeBase : MonoBehaviour
     
     public void OnLClick(Vector2 mousePos)
     {
+        print("CLICK");
+        
         switch (gameState)
         {
             case GameState.Moving: playerCursor.OnLClick(mousePos);
@@ -95,23 +97,36 @@ public class GamemodeBase : MonoBehaviour
         skillManager.EquipSkill(skillN);
     }
 
-    public void InstantiateSkillEntry(PlayerSkill skill, Transform skillPool, GameObject skillPoolEntryPrefab)
+    #endregion
+
+    #region UI
+
+    public void OpenInventory()
     {
-        
+        uiManager.OpenInventory();
     }
     
+    public void OpenSkillTree()
+    {
+        uiManager.OpenSkillTree();
+    }
+
     #endregion
     
     #region Dialogues
 
     public void StartDialogue(TextAsset inkStory)
     {
+        inputManager.DisableGameplay();
+        inputManager.DisableHUDInteraction();
         gameState = GameState.OnDialogue;
+        
         uiManager.StartDialogue(inkStory);
     }
 
     public void EndDialogue() 
     {
+        inputManager.EnableGameplay();
         gameState = GameState.Moving;
     }
     
@@ -140,5 +155,10 @@ public class GamemodeBase : MonoBehaviour
     public InputManager GetInputManager()
     {
         return inputManager;
+    }
+
+    public void OnPause()
+    {
+        
     }
 }

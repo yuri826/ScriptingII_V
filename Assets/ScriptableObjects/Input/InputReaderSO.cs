@@ -16,6 +16,9 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     public delegate void OnClickStarted(Vector2 mousePos);
     public OnClickStarted onClickStarted;
     
+    public delegate void OnUILClick(Vector2 mousePos);
+    public OnUILClick onUIClick;
+    
     public delegate void OnPauseInput();
     public OnPauseInput onPause;
     
@@ -90,5 +93,25 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
         inputActions.FindAction("LClick").Enable();
     }
 
-    public void OnHUDClick(InputAction.CallbackContext context){}
+    public void DisableGameplay()
+    {
+        inputActions.Gameplay.RemoveCallbacks(this);
+        inputActions.HUDInteraction.AddCallbacks(this);
+
+        //Para el movimiento del jugador
+        InputAction.CallbackContext fakeCtx = new InputAction.CallbackContext();
+        OnMovement(fakeCtx);
+    }
+    
+    public void EnableGameplay()
+    {
+        inputActions.Gameplay.AddCallbacks(this);
+        inputActions.HUDInteraction.RemoveCallbacks(this);
+    }
+
+    public void OnUIClick(InputAction.CallbackContext context)
+    {
+        Debug.Log("OnUIClick");
+        if (context.started) onUIClick?.Invoke(context.ReadValue<Vector2>());
+    }
 }

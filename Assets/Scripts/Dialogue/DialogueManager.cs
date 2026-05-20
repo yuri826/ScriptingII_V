@@ -47,6 +47,7 @@ public class DialogueManager:MonoBehaviour
     //Input
     public void OnClick()
     {
+        Debug.Log("Clock");
         switch (state)
         {
             case DialogueState.Typing: //WriteFullText(); -> Va medio raro
@@ -71,6 +72,8 @@ public class DialogueManager:MonoBehaviour
     private void RefreshView()
     {
         RemoveChildren();
+        
+        if (!story.state.canContinue) EndStory();
 
         currentLine = ContinueStory();
         typeRoutine = StartCoroutine(WriteText(currentLine));
@@ -95,10 +98,10 @@ public class DialogueManager:MonoBehaviour
         {
             foreach (var choice in story.currentChoices)
             {
-                Button button = CreateChoiceView (choice.text.Trim());
+                Button button = CreateChoiceView(choice.text.Trim());
 
                 var choice1 = choice;
-                button.onClick.AddListener (delegate { OnClickChoiceButton (choice1); });
+                button.onClick.AddListener (delegate {OnClickChoiceButton(choice1);} );
             }
             
             state = DialogueState.Choice;
@@ -107,20 +110,18 @@ public class DialogueManager:MonoBehaviour
         {
             state = DialogueState.CanContinue;
         }
-        
-        if (!story.state.canContinue) EndStory();
     }
 
     private void OnClickChoiceButton (Choice choice) 
     {
-        story.ChooseChoiceIndex (choice.index);
+        story.ChooseChoiceIndex(choice.index);
         RefreshView();
     }
     
     private Button CreateChoiceView (string text) 
     {
         // Creates the button from a prefab
-        Button choice = Instantiate(buttonPrefab, buttonCanvas.transform, false) as Button;
+        Button choice = Instantiate(buttonPrefab, buttonCanvas.transform, false);
 
         // Gets the text from the button prefab
         choice.GetComponentInChildren<TextMeshProUGUI>().text = text;

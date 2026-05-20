@@ -4,11 +4,13 @@ using UnityEngine;
 public class PlayerSkill : ScriptableObject
 {
     [field: SerializeField] public Sprite icon { get; private set; }
+    [field: SerializeField] public string name { get; private set; }
+    [field: SerializeField] public string description { get; private set; }
     [field: SerializeField] public SkillType skillType { get; private set; }
     [field: SerializeField] public int buyCost { get; private set; }
     [field: SerializeField] public int manaCost { get; private set; }
-        
-    public virtual void ExecuteSkill()
+
+    protected virtual void ExecuteSkill()
     {
         PlayerState playerState = GamemodeBase.Instance.GetPlayerState();
         
