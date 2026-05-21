@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class UIManager : GamemodeSubsystem
 {
+    
     [Header("Dialogue")]
     [SerializeField] private DialogueManager dialogueManager;
 
@@ -20,6 +21,7 @@ public class UIManager : GamemodeSubsystem
     [SerializeField] private GameObject inventoryInfoPanel;
 
     [Header("Shop")] 
+    private bool isShopOpened = false;
     [SerializeField] private ShopMenuManager shopManager;
  
     public PlayerInventory GetPlayerInventory()
@@ -40,7 +42,7 @@ public class UIManager : GamemodeSubsystem
 
     public void OpenInventory()
     {
-        if (isSkillTreeOpened) return;
+        if (isSkillTreeOpened || isShopOpened) return;
         
         isInventoryOpened = !isInventoryOpened;
         
@@ -53,7 +55,7 @@ public class UIManager : GamemodeSubsystem
 
     public void OpenSkillTree()
     {
-        if (isInventoryOpened) return;
+        if (isInventoryOpened || isShopOpened) return;
         
         isSkillTreeOpened = !isSkillTreeOpened;
         
@@ -66,6 +68,8 @@ public class UIManager : GamemodeSubsystem
 
     public void OpenShopMenu(ShopData shopData)
     {
+        CloseMenus();
+        isShopOpened = true;
         gamemodeParent.GetInputManager().DisableGameplay();
         shopManager.ShowMenu(shopData);
     }
@@ -85,6 +89,7 @@ public class UIManager : GamemodeSubsystem
         skillTreeInfoPanel.SetActive(false);
         
         //Shop
+        isShopOpened = false;
         shopManager.HideMenu();
     }
 }

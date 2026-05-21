@@ -104,7 +104,7 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     
     public void DisableHUDInteraction()
     {
-        inputActions.FindAction("LClick").Enable();
+        if (inputActions.Gameplay.enabled) inputActions.FindAction("LClick").Enable();
     }
 
     public void DisableGameplay()
@@ -120,6 +120,7 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     public void EnableGameplay()
     {
         inputActions.Gameplay.Enable();
+        //inputActions.FindAction("LClick").Enable();
         inputActions.HUDInteraction.Disable();
     }
     
