@@ -5,7 +5,6 @@ using UnityEngine;
 [Serializable]
 public class UIManager : GamemodeSubsystem
 {
-    
     [Header("Dialogue")]
     [SerializeField] private DialogueManager dialogueManager;
 
@@ -31,12 +30,12 @@ public class UIManager : GamemodeSubsystem
 
     public void DialogueClick()
     {
-        Debug.Log("Dialogue Click");
         dialogueManager.OnClick();
     }
     
     public void StartDialogue(TextAsset inkStory)
     {
+        gamemodeParent.GetHUD().CloseHotbarInstant();
         dialogueManager.StartStory(inkStory);
     }
 
@@ -45,6 +44,8 @@ public class UIManager : GamemodeSubsystem
         if (isSkillTreeOpened || isShopOpened) return;
         
         isInventoryOpened = !isInventoryOpened;
+        
+        gamemodeParent.GetHUD().CloseHotbarInstant();
         
         if (isInventoryOpened) gamemodeParent.GetInputManager().DisableGameplay();
         else  gamemodeParent.GetInputManager().EnableGameplay();
@@ -57,6 +58,7 @@ public class UIManager : GamemodeSubsystem
     {
         if (isInventoryOpened || isShopOpened) return;
         
+        gamemodeParent.GetHUD().CloseHotbarInstant();
         isSkillTreeOpened = !isSkillTreeOpened;
         
         if (isSkillTreeOpened) gamemodeParent.GetInputManager().DisableGameplay();
@@ -68,6 +70,8 @@ public class UIManager : GamemodeSubsystem
 
     public void OpenShopMenu(ShopData shopData)
     {
+        gamemodeParent.GetHUD().CloseHotbarInstant();
+        
         CloseMenus();
         isShopOpened = true;
         gamemodeParent.GetInputManager().DisableGameplay();

@@ -71,6 +71,12 @@ public class HUD : GamemodeSubsystem
             skillHotbar.ShowIcons(caller, slotN);
         }
     }
+    
+    public void CloseHotbarInstant()
+    {
+        isSkillHotbarOpen = false;
+        skillHotbar.HideIcons();
+    }
 
     public void UpdateMana(int current, int max)
     {
