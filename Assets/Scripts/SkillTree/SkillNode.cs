@@ -11,9 +11,13 @@ public class SkillNode : MonoBehaviour
 
     [SerializeField] private Image skillIcon;
     [SerializeField] private Image bgImage;
+    [SerializeField] private Image[] paths;
     
     [SerializeField] private GameObject select;
     [SerializeField] private GameObject acquired;
+    [SerializeField] private Sprite acquiredPathSprite;
+    [SerializeField] private Sprite unlockedSprite;
+    [SerializeField] private Sprite lockedSprite;
     
     private SkillTreeManager treeManager;
 
@@ -26,7 +30,17 @@ public class SkillNode : MonoBehaviour
         button.onClick.AddListener(SelectNode);
         skillIcon.sprite = skill.icon;
         
-        if (nodeState == SkillNodeState.Locked) bgImage.color = new Color(0.2f,0.2f,0.2f,1);
+        switch (nodeState)
+        {
+            case SkillNodeState.Locked:
+                bgImage.sprite = lockedSprite;
+                skillIcon.color = new Vector4(1, 1, 1, 0.2f);
+                break;
+            case SkillNodeState.Unlocked:
+                bgImage.sprite = unlockedSprite;
+                skillIcon.color = new Vector4(1, 1, 1, 1);
+                break;
+        }
     }
 
     public void AcquireNode()
@@ -35,10 +49,13 @@ public class SkillNode : MonoBehaviour
 
         nodeState = SkillNodeState.Acquired;
         
-        bgImage.color = new Color(0.5f,0.5f,0.5f,1);
         acquired.SetActive(true);
 
-        GamemodeBase.Instance.GetPlayerState().ChangeXp(-skill.buyCost);
+        for (var index = 0; index < paths.Length; index++)
+        {
+            paths[index].sprite = acquiredPathSprite;
+        }
+
         GamemodeBase.Instance.GetSkillManager().AddSkill(skill);
     }
 
@@ -54,9 +71,10 @@ public class SkillNode : MonoBehaviour
         select.SetActive(false);
     }
 
-    public void UnlockNode()
+    private void UnlockNode()
     {
         nodeState = SkillNodeState.Unlocked;
-        bgImage.color = new Color(0.5f,0.5f,0.5f,1);
+        bgImage.sprite = unlockedSprite;
+        skillIcon.color = new Vector4(1, 1, 1, 1);
     }
 }

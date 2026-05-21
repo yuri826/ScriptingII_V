@@ -17,5 +17,5 @@ MonoBehaviour:
   <Info>k__BackingField: Te cura en plan un poquito solo.
   <Image>k__BackingField: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   <InventorySprite>k__BackingField: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  <Icon>k__BackingField: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  <BuyPrice>k__BackingField: 0
+  <Icon>k__BackingField: {fileID: 21300000, guid: 60f3c745776424147868201ac56e8a55, type: 3}
+  <BuyPrice>k__BackingField: 25

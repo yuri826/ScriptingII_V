@@ -142,8 +142,12 @@ MonoBehaviour:
   <skill>k__BackingField: {fileID: 11400000, guid: d1cd987f2116eb54580b79dd1872d019, type: 2}
   skillIcon: {fileID: 5377826616860882259}
   bgImage: {fileID: 5332055288422969481}
+  paths: []
   select: {fileID: 2321700372574108494}
   acquired: {fileID: 5292260861322410762}
+  acquiredPathSprite: {fileID: 21300000, guid: 787e6dec64b7dc942bd1698fa89faf9c, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: da8deee132ea715478a2435a3b61247c, type: 3}
+  lockedSprite: {fileID: 21300000, guid: eb95f25e49f7d964886f7d485ce7637e, type: 3}
 --- !u!114 &5631208037464380577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,7 +250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.92156863, g: 0.92941177, b: 0.9137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -321,14 +325,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4113207, g: 0.4113207, b: 0.4113207, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: eb95f25e49f7d964886f7d485ce7637e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -396,7 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9924528, g: 0.89957494, b: 0.3951085, a: 1}
+  m_Color: {r: 0.909804, g: 0.7568628, b: 0.43921572, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

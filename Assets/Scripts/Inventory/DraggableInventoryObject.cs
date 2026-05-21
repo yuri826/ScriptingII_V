@@ -23,7 +23,7 @@ namespace Inventory
 
         private void Start()
         {
-            image.sprite = inventoryItem.InventorySprite;
+            image.sprite = inventoryItem.Icon;
         }
 
         #region Dragging

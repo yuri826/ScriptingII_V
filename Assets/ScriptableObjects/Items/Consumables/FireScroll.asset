@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3de521e278b71334685a9d93db26b02c, type: 3}
-  m_Name: HealthPotIII
+  m_Name: FireScroll
   m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
-  <Name>k__BackingField: Health Potion III
-  <Type>k__BackingField: Consumable
-  <Info>k__BackingField: Te cura en plan mazo, pero mazo mazo.
+  <Name>k__BackingField: Fire Scroll
+  <Type>k__BackingField: Scroll
+  <Info>k__BackingField: Invokes a fire ring round you when used.
   <Image>k__BackingField: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   <InventorySprite>k__BackingField: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  <Icon>k__BackingField: {fileID: 21300000, guid: ec9e18aeb36ba0c48a564aca3186bcb6, type: 3}
-  <BuyPrice>k__BackingField: 50
+  <Icon>k__BackingField: {fileID: 21300000, guid: f320f56f2c3d55a42afc7f95e6ab9122, type: 3}
+  <BuyPrice>k__BackingField: 500

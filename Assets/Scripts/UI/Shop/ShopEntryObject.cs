@@ -39,7 +39,7 @@ namespace UI
 
         public void Select()
         {
-            BG.color = new Vector4(0.5f, 0.5f, 0.5f, 0.8f);
+            BG.color = Color.white;
         }
     }
 }
