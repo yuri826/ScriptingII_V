@@ -77,8 +77,6 @@ public class GamemodeBase : MonoBehaviour
     
     public void OnLClick(Vector2 mousePos)
     {
-        print("CLICK");
-        
         switch (gameState)
         {
             case GameState.Moving: playerCursor.OnLClick(mousePos);

@@ -80,12 +80,12 @@ public class HUD : GamemodeSubsystem
 
     public void UpdateMana(int current, int max)
     {
-        manaImage.fillAmount =  (float)current/max;
+        manaImage.fillAmount = (float)current/max;
     }
     
     public void UpdateHealth(int current, int max)
     {
-        healthImage.fillAmount =  (float)current/max;
+        healthImage.fillAmount = (float)current/max;
     }
 
     public void ChangeSkill(int slot, Sprite skillIcon)
@@ -104,11 +104,11 @@ public class HUD : GamemodeSubsystem
 
     public void UpdateMoney(int money)
     {
-        moneyText.text = money.ToString();
+        moneyText.text = $"Money: {money.ToString()} ";
     }
     
     public void UpdateXP(int xp)
     {
-        xpText.text = xp.ToString();
+        xpText.text = $"XP: {xp.ToString()} ";
     }
 }
