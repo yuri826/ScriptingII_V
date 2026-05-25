@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
+using Interfaces;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Player
 {
-    public class PlayerLogic : MonoBehaviour
+    public class PlayerLogic : MonoBehaviour, IDamageable
     {
         [SerializeField] private PlayerMovement playerMovement;
         [SerializeField] private NavMeshAgent agent;
@@ -60,6 +61,11 @@ namespace Player
         {
             yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
             interactable.OnInteract();
+        }
+
+        public void OnDamage(int damage)
+        {
+            GamemodeBase.Instance.GetPlayerState().ChangeHealth(-damage);
         }
     }
 }

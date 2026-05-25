@@ -5,7 +5,7 @@ namespace Interfaces
 {
     public interface IDamageable
     {
-        public void OnDamage(float damage)
+        public void OnDamage(int damage)
         {
             
         }

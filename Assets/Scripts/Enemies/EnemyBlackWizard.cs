@@ -11,7 +11,7 @@ namespace Enemy
 
         [Header("Attack")] 
         [SerializeField] private GameObject bullet;
-        [SerializeField] private float bulletDamage;
+        [SerializeField] private int bulletDamage;
         [SerializeField] private float areaShootTime;
 
         private void Start()

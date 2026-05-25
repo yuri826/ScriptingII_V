@@ -7,14 +7,14 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Rigidbody rb;
-    private float damage;
+    private int damage;
     
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    public void Init(Vector3 direction, float damage)
+    public void Init(Vector3 direction, int damage)
     {
         transform.parent = null;
         rb.linearVelocity = direction.normalized * speed;

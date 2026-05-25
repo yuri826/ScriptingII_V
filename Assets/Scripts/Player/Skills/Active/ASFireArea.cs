@@ -4,7 +4,7 @@ using UnityEngine;
 public class ASFireArea : PlayerSkill
 {
     [SerializeField] private GameObject fireAreaObj;
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
     [SerializeField] private float timeToVanish;
     [SerializeField] private float frequency;
 

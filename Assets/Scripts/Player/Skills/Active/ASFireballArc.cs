@@ -5,7 +5,7 @@ public class ASFireballArc : PlayerSkill
 {
     [SerializeField] private GameObject fireballObj;
     [SerializeField] private LayerMask projectileMask;
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
 
     public override void ExecuteSkill(Vector3 mouseRayHit)
     {
