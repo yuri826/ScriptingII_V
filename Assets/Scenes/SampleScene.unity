@@ -1507,6 +1507,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1556150383064298502, guid: 9f2e8580825644941b76f69ace73c055, type: 3}
+      propertyPath: <skill>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: e7f4ff725fdf52c48a8dd1660b284856, type: 2}
+    - target: {fileID: 1556150383064298502, guid: 9f2e8580825644941b76f69ace73c055, type: 3}
       propertyPath: 'nextNodes.Array.data[0]'
       value: 
       objectReference: {fileID: 351815500}
@@ -6899,7 +6903,7 @@ GameObject:
   - component: {fileID: 921591089}
   m_Layer: 7
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9984,7 +9988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5373145491434453453, guid: 86d99e02c237e2a428ff0b8490c8b337, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11884,7 +11888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1920883674
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13178,7 +13182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1154524468542169504, guid: 86d99e02c237e2a428ff0b8490c8b337, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -97.60005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1154524468542169504, guid: 86d99e02c237e2a428ff0b8490c8b337, type: 3}
       propertyPath: m_AnchoredPosition.y

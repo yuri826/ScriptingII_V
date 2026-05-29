@@ -57,6 +57,12 @@ public class PlayerState : GamemodeSubsystem
         currentHealth += value;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         gamemodeParent.GetHUD().UpdateHealth(currentHealth, maxHealth);
+
+        //Si te golpean cierra todos los menús
+        if (value < 0)
+        {
+            gamemodeParent.GetUiManager().CloseMenus();
+        }
     }
 
     public void FillHealth(int value)
