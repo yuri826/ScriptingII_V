@@ -13,12 +13,7 @@ MonoBehaviour:
   m_Name: ShopData1
   m_EditorClassIdentifier: Assembly-CSharp::ShopData
   itemsToSell:
-  - {fileID: 11400000, guid: 1efacb6828dcf43438fa816d2edc4a0b, type: 2}
-  - {fileID: 11400000, guid: 54c931aff552b334fb76dfcd26b08f1c, type: 2}
-  - {fileID: 11400000, guid: 506181c6eb217214f9d3d09469ffcbba, type: 2}
-  - {fileID: 11400000, guid: 506181c6eb217214f9d3d09469ffcbba, type: 2}
-  - {fileID: 11400000, guid: 506181c6eb217214f9d3d09469ffcbba, type: 2}
-  - {fileID: 11400000, guid: 506181c6eb217214f9d3d09469ffcbba, type: 2}
-  - {fileID: 11400000, guid: 506181c6eb217214f9d3d09469ffcbba, type: 2}
-  - {fileID: 11400000, guid: 506181c6eb217214f9d3d09469ffcbba, type: 2}
-  - {fileID: 11400000, guid: 506181c6eb217214f9d3d09469ffcbba, type: 2}
+  - {fileID: 11400000, guid: 92464e6f171c66047810d8eb2384118d, type: 2}
+  - {fileID: 11400000, guid: d4528980af83e6f4a9aff9c4fba40b25, type: 2}
+  - {fileID: 11400000, guid: b0ca254272090ab4eafbfd0c1b084eb0, type: 2}
+  - {fileID: 11400000, guid: 17c2b562bf9fdba41a863857bb3aea31, type: 2}

@@ -21,5 +21,5 @@ MonoBehaviour:
   fireballObj: {fileID: 7333006673771419709, guid: 3f6aab5ad5f789546819bf615abc0463, type: 3}
   projectileMask:
     serializedVersion: 2
-    m_Bits: 0
-  damage: 2
+    m_Bits: 512
+  damage: 0

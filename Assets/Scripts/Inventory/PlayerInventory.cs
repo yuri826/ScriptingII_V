@@ -23,6 +23,8 @@ namespace UI
         [Header("Grid")] 
         [SerializeField] private GameObject gridPanel;
 
+        private DraggableInventoryObject currentItem;
+
         private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
         private void Awake()
@@ -41,11 +43,13 @@ namespace UI
             gridPanel.SetActive(true);
         }
 
-        public void ActivateItemPanel(InventoryItem item)
+        public void ActivateItemPanel(InventoryItem item, DraggableInventoryObject itemEntry)
         {
             itemTitle.text = item.Name;
             itemImage.sprite = item.Image;
             itemInfo.text = item.Info;
+            
+            currentItem = itemEntry;
         
             itemPanel.SetActive(true);
         }
@@ -79,7 +83,14 @@ namespace UI
 
             return true;
         }
-    
+
+        public void ConsumeItem()
+        {
+            currentItem.currentParent.GetComponent<InventorySlot>().isTaken = false;
+            currentItem.inventoryItem.Consume();
+            Destroy(currentItem.gameObject);
+        }
+        
         public void HideInventory()
         {
             itemPanel.SetActive(false);

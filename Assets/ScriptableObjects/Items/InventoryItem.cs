@@ -11,4 +11,9 @@ public class InventoryItem : ScriptableObject
     //[field:SerializeField] public Sprite InventorySprite { get; private set; }
     [field:SerializeField] public Sprite Icon { get; private set; }
     [field:SerializeField] public int BuyPrice { get; private set; }
+
+    public virtual void Consume()
+    {
+        
+    }
 }

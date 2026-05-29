@@ -56,7 +56,7 @@ namespace Inventory
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            playerInventory.ActivateItemPanel(inventoryItem);
+            playerInventory.ActivateItemPanel(inventoryItem, this);
         }
     }
 }

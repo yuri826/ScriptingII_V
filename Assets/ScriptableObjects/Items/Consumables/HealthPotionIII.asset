@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3de521e278b71334685a9d93db26b02c, type: 3}
-  m_Name: HealthPotIII
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryItem
+  m_Script: {fileID: 11500000, guid: 09a3a00b2c1e9534a9054405bf5ca631, type: 3}
+  m_Name: HealthPotionIII
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryItemHealthPotion
   <Name>k__BackingField: Health Potion III
   <Type>k__BackingField: Consumable
-  <Info>k__BackingField: Te cura en plan mazo, pero mazo mazo.
+  <Info>k__BackingField: Heals a lot of health.
   <Image>k__BackingField: {fileID: 21300000, guid: ec9e18aeb36ba0c48a564aca3186bcb6, type: 3}
   <Icon>k__BackingField: {fileID: 21300000, guid: ec9e18aeb36ba0c48a564aca3186bcb6, type: 3}
   <BuyPrice>k__BackingField: 50
+  <cureAmount>k__BackingField: 35

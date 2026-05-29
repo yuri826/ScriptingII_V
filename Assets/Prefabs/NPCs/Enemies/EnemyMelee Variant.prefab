@@ -129,7 +129,7 @@ MonoBehaviour:
   enemyHUD:
     healthbarFill: {fileID: 5315251273015705313}
   iceCube: {fileID: 6384424243563236649}
-  damage: 1
+  damage: 7
   playerMask:
     serializedVersion: 2
     m_Bits: 64
