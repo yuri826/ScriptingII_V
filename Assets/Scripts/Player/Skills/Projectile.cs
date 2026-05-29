@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Rigidbody rb;
-    private int damage;
+    protected int damage;
     
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
         this.damage = damage;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out IDamageable damageable))
         {

@@ -20,13 +20,11 @@ public class InputManager : GamemodeSubsystem
     
     public void EnableHUDInteraction()
     {
-        Debug.Log("In"); 
         inputReader.EnableHUDInteraction(); 
     }
 
     public void DisableHUDInteraction()
     {
-        Debug.Log("Out");
         inputReader.DisableHUDInteraction();
     }
     

@@ -6,11 +6,15 @@ using UnityEngine.AI;
 
 namespace Enemy
 {
-    public class EnemyBase : MonoBehaviour, IDamageable
+    public class EnemyBase : MonoBehaviour, IDamageable, IFreeze
     {
         [SerializeField] protected EnemyState enemyState;
         [SerializeField] protected EnemyHUD enemyHUD;
         [SerializeField] protected EnemyLoot enemyLoot;
+        
+        [Header("Ice")] 
+        [SerializeField]
+        protected GameObject iceCube;
         
         protected NavMeshAgent navMeshAgent;
         
@@ -25,6 +29,8 @@ namespace Enemy
             enemyState.OnAwake();
             enemyHUD.OnAwake();
             enemyLoot.OnAwake();
+            
+            iceCube.SetActive(false);
             
             navMeshAgent = GetComponent<NavMeshAgent>();
         }
@@ -47,7 +53,7 @@ namespace Enemy
             }
         }
 
-        public IEnumerator ConstantDamage(float damage, float frequency)
+        public IEnumerator ConstantDamage(int damage, float frequency)
         {
             while (true)
             {
@@ -57,17 +63,47 @@ namespace Enemy
             }
         }
 
-        public virtual void OnDamage(float damage)
+        public virtual void OnDamage(int damage)
         {
-            print("damage");
-            enemyState.ChangeHealth(-damage);
-            enemyHUD.UpdateBarFill(enemyState.currentHealth, enemyState.maxHealth);
+            if (enemyState.elementState == ElementState.Normal)
+            {
+                enemyState.ChangeHealth(-damage);
+                enemyHUD.UpdateBarFill(enemyState.currentHealth, enemyState.maxHealth);
+            }
+            else if (enemyState.elementState == ElementState.Frozen)
+            {
+                StopAllCoroutines();
+                OnEndFreeze();
+                enemyState.ChangeHealth(-damage*3);
+                enemyHUD.UpdateBarFill(enemyState.currentHealth, enemyState.maxHealth);
+            }
         }
 
         public virtual void OnDie()
         {
             enemyLoot.DropLoot();
             Destroy(gameObject);
+        }
+
+        public virtual void OnFreeze()
+        {
+            iceCube.SetActive(true);
+            enemyState.elementState = ElementState.Frozen;
+            StopAllCoroutines();
+            StartCoroutine(FreezeTime());
+            print("awawa");
+        }
+
+        protected virtual void OnEndFreeze()
+        {
+            enemyState.elementState = ElementState.Normal;
+            iceCube.SetActive(false);
+        }
+
+        private IEnumerator FreezeTime()
+        {
+            yield return new WaitForSeconds(10);
+            OnEndFreeze();
         }
     }
 

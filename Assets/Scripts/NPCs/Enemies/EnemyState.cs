@@ -3,11 +3,18 @@ using UnityEngine;
 
 namespace Enemy
 {
+    public enum ElementState
+    {
+        Normal,
+        Frozen
+    }
+    
     [Serializable]
     public class EnemyState : EnemySubsystem
     {
         [field: SerializeField] public int maxHealth { get; set; }
         public float currentHealth { get; private set; }
+        protected internal ElementState elementState = ElementState.Normal;
 
         public override void OnAwake()
         {

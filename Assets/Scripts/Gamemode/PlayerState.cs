@@ -56,19 +56,19 @@ public class PlayerState : GamemodeSubsystem
     {
         currentHealth += value;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        gamemodeParent.GetHUD().UpdateMana(currentHealth, maxHealth);
+        gamemodeParent.GetHUD().UpdateHealth(currentHealth, maxHealth);
     }
 
     public void FillHealth(int value)
     {
         currentHealth = maxHealth;
-        gamemodeParent.GetHUD().UpdateMana(currentHealth, maxHealth);
+        gamemodeParent.GetHUD().UpdateHealth(currentHealth, maxHealth);
     }
     
     public void ChangeMaxHealth(int value)
     {
         currentHealth += value;
-        gamemodeParent.GetHUD().UpdateMana(currentHealth, maxHealth);
+        gamemodeParent.GetHUD().UpdateHealth(currentHealth, maxHealth);
     }
 
     public void ChangeMoney(int value)
