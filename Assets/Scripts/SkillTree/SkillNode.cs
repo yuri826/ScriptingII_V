@@ -40,6 +40,9 @@ public class SkillNode : MonoBehaviour
                 bgImage.sprite = unlockedSprite;
                 skillIcon.color = new Vector4(1, 1, 1, 1);
                 break;
+            case SkillNodeState.Acquired:
+                AcquireNode();
+                break;
         }
     }
 
@@ -56,6 +59,7 @@ public class SkillNode : MonoBehaviour
             paths[index].sprite = acquiredPathSprite;
         }
 
+        GamemodeBase.Instance.GetPlayerState().ChangeXp(-skill.buyCost);
         GamemodeBase.Instance.GetSkillManager().AddSkill(skill);
     }
 
