@@ -6,7 +6,7 @@ using UnityEngine;
 public class UIManager : GamemodeSubsystem
 {
     [Header("Dialogue")]
-    [SerializeField] private DialogueManager dialogueManager;
+    [SerializeField] private DialogueManagerNew dialogueManager;
 
     [Header("SkillTree")]
     private bool isSkillTreeOpened = false;
@@ -33,38 +33,26 @@ public class UIManager : GamemodeSubsystem
         dialogueManager.OnClick();
     }
     
-    public void StartDialogue(TextAsset inkStory)
+    public void StartDialogue(Dialogue dialogue)
     {
-        gamemodeParent.GetHUD().CloseHotbarInstant();
-        dialogueManager.StartStory(inkStory);
+        dialogueManager.StartStory(dialogue);
     }
 
-    public void OpenInventory()
+    public void OpenInventory(bool open)
     {
         if (isSkillTreeOpened || isShopOpened) return;
         
-        isInventoryOpened = !isInventoryOpened;
-        
         gamemodeParent.GetHUD().CloseHotbarInstant();
         
-        if (isInventoryOpened) gamemodeParent.GetInputManager().DisableGameplay();
-        else  gamemodeParent.GetInputManager().EnableGameplay();
-        
-        inventoryPanel.SetActive(isInventoryOpened);
+        inventoryPanel.SetActive(open);
         inventoryInfoPanel.SetActive(false);
     }
 
-    public void OpenSkillTree()
+    public void OpenSkillTree(bool open)
     {
         if (isInventoryOpened || isShopOpened) return;
         
-        gamemodeParent.GetHUD().CloseHotbarInstant();
-        isSkillTreeOpened = !isSkillTreeOpened;
-        
-        if (isSkillTreeOpened) gamemodeParent.GetInputManager().DisableGameplay();
-        else  gamemodeParent.GetInputManager().EnableGameplay();
-        
-        skillTreePanel.SetActive(isSkillTreeOpened);
+        skillTreePanel.SetActive(open);
         skillTreeInfoPanel.SetActive(false);
     }
 

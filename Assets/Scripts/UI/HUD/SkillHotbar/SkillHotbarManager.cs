@@ -32,7 +32,11 @@ public class SkillHotbarManager : MonoBehaviour
     
     public void HideIcons()
     {
-        StartCoroutine(HideRoutine());
+        for (int i = hotbarIcons.Count-1; i >= 0 ; i--)
+        {
+            hotbarIcons[i].Hide(poolPosition);
+        }
+        isOpening = false;
     }
 
     private IEnumerator ShowRoutine()

@@ -7,6 +7,9 @@ using UnityEngine.UI;
 [Serializable]
 public class HUD : GamemodeSubsystem
 {
+    [Header("General")] 
+    [SerializeField] private GameObject HudObject;
+    
     [Header("Skills")]
     [SerializeField] private Button ActiveSlot1;
     [SerializeField] private Image ActiveSlot1Icon;
@@ -110,5 +113,15 @@ public class HUD : GamemodeSubsystem
     public void UpdateXP(int xp)
     {
         xpText.text = $"XP: {xp.ToString()} ";
+    }
+
+    public void HideHUD()
+    {
+        HudObject.SetActive(false);
+    }
+    
+    public void ShowHUD()
+    {
+        HudObject.SetActive(true);
     }
 }

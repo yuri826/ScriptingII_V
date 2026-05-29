@@ -20,11 +20,13 @@ public class InputManager : GamemodeSubsystem
     
     public void EnableHUDInteraction()
     {
+        inputReader.DisableGameplay();
         inputReader.EnableHUDInteraction(); 
     }
 
     public void DisableHUDInteraction()
     {
+        inputReader.EnableGameplay();
         inputReader.DisableHUDInteraction();
     }
     
@@ -34,6 +36,11 @@ public class InputManager : GamemodeSubsystem
     }
 
     public void DisableGameplay()
+    {
+        inputReader.DisableGameplay();
+    }
+
+    public void DialogueInput()
     {
         inputReader.DisableGameplay();
     }

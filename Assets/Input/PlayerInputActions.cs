@@ -334,6 +334,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UIClick"",
+                    ""type"": ""Value"",
+                    ""id"": ""095e8473-9ad9-447a-8443-06a6163ddc3e"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -347,6 +356,39 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""d7c48acd-c89e-405e-9815-2c9e6000802a"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UIClick"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""c3081ab5-0b8d-4ea8-a93f-9055a45836e6"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KBM"",
+                    ""action"": ""UIClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""b6095025-1a18-4b1e-b175-e68e888b57d9"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";KBM"",
+                    ""action"": ""UIClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -383,6 +425,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         // HUDInteraction
         m_HUDInteraction = asset.FindActionMap("HUDInteraction", throwIfNotFound: true);
         m_HUDInteraction_Escape = m_HUDInteraction.FindAction("Escape", throwIfNotFound: true);
+        m_HUDInteraction_UIClick = m_HUDInteraction.FindAction("UIClick", throwIfNotFound: true);
     }
 
     ~@PlayerInputActions()
@@ -638,6 +681,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_HUDInteraction;
     private List<IHUDInteractionActions> m_HUDInteractionActionsCallbackInterfaces = new List<IHUDInteractionActions>();
     private readonly InputAction m_HUDInteraction_Escape;
+    private readonly InputAction m_HUDInteraction_UIClick;
     /// <summary>
     /// Provides access to input actions defined in input action map "HUDInteraction".
     /// </summary>
@@ -653,6 +697,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "HUDInteraction/Escape".
         /// </summary>
         public InputAction @Escape => m_Wrapper.m_HUDInteraction_Escape;
+        /// <summary>
+        /// Provides access to the underlying input action "HUDInteraction/UIClick".
+        /// </summary>
+        public InputAction @UIClick => m_Wrapper.m_HUDInteraction_UIClick;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -682,6 +730,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Escape.started += instance.OnEscape;
             @Escape.performed += instance.OnEscape;
             @Escape.canceled += instance.OnEscape;
+            @UIClick.started += instance.OnUIClick;
+            @UIClick.performed += instance.OnUIClick;
+            @UIClick.canceled += instance.OnUIClick;
         }
 
         /// <summary>
@@ -696,6 +747,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Escape.started -= instance.OnEscape;
             @Escape.performed -= instance.OnEscape;
             @Escape.canceled -= instance.OnEscape;
+            @UIClick.started -= instance.OnUIClick;
+            @UIClick.performed -= instance.OnUIClick;
+            @UIClick.canceled -= instance.OnUIClick;
         }
 
         /// <summary>
@@ -820,5 +874,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnEscape(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "UIClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUIClick(InputAction.CallbackContext context);
     }
 }

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class NPCBase : InteractableObject
 {
-    [SerializeField] protected TextAsset npcInkStory;
+    [SerializeField] protected Dialogue dialogue;
     
     public override void OnInteract()
     {
-        GamemodeBase.Instance.StartDialogue(npcInkStory);
+        GamemodeBase.Instance.StartDialogue(dialogue);
     }
 }

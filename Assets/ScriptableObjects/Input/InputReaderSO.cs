@@ -71,6 +71,11 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
         if (context.started) onEscape?.Invoke();
     }
 
+    public void OnUIClick(InputAction.CallbackContext context)
+    {
+        if (context.started) onClickStarted?.Invoke(context.ReadValue<Vector2>());
+    }
+
     public void OnPause(InputAction.CallbackContext context)
     {
         if (context.started) onPause?.Invoke();

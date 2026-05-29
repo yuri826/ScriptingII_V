@@ -99,31 +99,57 @@ public class GamemodeBase : MonoBehaviour
 
     #region UI
 
+    private bool inventoryOpened = false;
     public void OpenInventory()
     {
-        uiManager.OpenInventory();
+        if (inventoryOpened)
+        {
+            inputManager.EnableGameplay();
+            uiManager.OpenInventory(false);
+        }
+        else
+        {
+            inputManager.DisableGameplay();
+            uiManager.OpenInventory(true);
+        }
+        
+        inventoryOpened = !inventoryOpened;
     }
     
+    private bool skillTreeOpened = false;
     public void OpenSkillTree()
     {
-        uiManager.OpenSkillTree();
+        if (skillTreeOpened)
+        {
+            inputManager.EnableGameplay();
+            uiManager.OpenSkillTree(false);
+        }
+        else
+        {
+            inputManager.DisableGameplay();
+            uiManager.OpenSkillTree(true);
+        }
+        
+        skillTreeOpened = !skillTreeOpened;
     }
 
     #endregion
     
     #region Dialogues
 
-    public void StartDialogue(TextAsset inkStory)
+    public void StartDialogue(Dialogue dialogue)
     {
-        inputManager.DisableGameplay();
-        inputManager.DisableHUDInteraction();
+        inputManager.DialogueInput();
         gameState = GameState.OnDialogue;
         
-        uiManager.StartDialogue(inkStory);
+        gameHUD.HideHUD();
+        gameHUD.CloseHotbarInstant();
+        uiManager.StartDialogue(dialogue);
     }
 
     public void EndDialogue() 
     {
+        gameHUD.ShowHUD();
         inputManager.EnableGameplay();
         gameState = GameState.Moving;
     }
