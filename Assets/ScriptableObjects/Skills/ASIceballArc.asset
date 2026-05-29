@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059f273d7f76c7d4ba9617009c76c575, type: 3}
   m_Name: ASIceballArc
   m_EditorClassIdentifier: Assembly-CSharp::ASFireballArc
-  <icon>k__BackingField: {fileID: 1287649992867056945, guid: 6eaa9958d83ec43499e946a21edba283, type: 3}
+  <icon>k__BackingField: {fileID: 21300000, guid: 7994fa9d9c0fbc9438775f2ccaa7f175, type: 3}
   <name>k__BackingField: Iceball Arc
   <description>k__BackingField: Shoots 5 Iceballs in an arc towards the selected
     enemy.

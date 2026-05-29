@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f7f1ce7dbedf6479c18181c3124cf7, type: 3}
   m_Name: ASFireball
   m_EditorClassIdentifier: Assembly-CSharp::ASFireball
-  <icon>k__BackingField: {fileID: 21300000, guid: 8ca869dd944d5f54e9ec614b26f10dcb, type: 3}
+  <icon>k__BackingField: {fileID: 21300000, guid: 45cdba1d66a8f5044902b50ad81398df, type: 3}
   <name>k__BackingField: Fireball
   <description>k__BackingField: Shoots one fireball to a selected enemy.
   <skillType>k__BackingField: 0

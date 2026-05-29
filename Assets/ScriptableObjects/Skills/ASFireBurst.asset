@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc028fc0953e7244985bcaf3ebbbf93, type: 3}
   m_Name: ASFireBurst
   m_EditorClassIdentifier: Assembly-CSharp::ASFireBurst
-  <icon>k__BackingField: {fileID: 21300000, guid: a0ce6eadcb7192447b5f9a139623b884, type: 3}
+  <icon>k__BackingField: {fileID: 21300000, guid: 921ecd24edaecd34a9c97118b9807770, type: 3}
   <name>k__BackingField: Fire Burst
   <description>k__BackingField: Bursts fire around the player, damaging enemies.
   <skillType>k__BackingField: 0
