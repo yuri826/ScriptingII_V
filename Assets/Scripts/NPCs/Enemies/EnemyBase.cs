@@ -13,8 +13,7 @@ namespace Enemy
         [SerializeField] protected EnemyLoot enemyLoot;
         
         [Header("Ice")] 
-        [SerializeField]
-        protected GameObject iceCube;
+        [SerializeField] protected GameObject iceCube;
         
         protected NavMeshAgent navMeshAgent;
         
@@ -88,10 +87,8 @@ namespace Enemy
         public virtual void OnFreeze()
         {
             iceCube.SetActive(true);
-            enemyState.elementState = ElementState.Frozen;
             StopAllCoroutines();
             StartCoroutine(FreezeTime());
-            print("awawa");
         }
 
         protected virtual void OnEndFreeze()
@@ -102,6 +99,8 @@ namespace Enemy
 
         private IEnumerator FreezeTime()
         {
+            yield return null;
+            enemyState.elementState = ElementState.Frozen;
             yield return new WaitForSeconds(10);
             OnEndFreeze();
         }

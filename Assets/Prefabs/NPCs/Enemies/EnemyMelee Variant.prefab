@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMelee
   enemyState:
-    <maxHealth>k__BackingField: 5
+    <maxHealth>k__BackingField: 25
   enemyHUD:
     healthbarFill: {fileID: 5315251273015705313}
   iceCube: {fileID: 6384424243563236649}
@@ -136,7 +136,7 @@ MonoBehaviour:
   attackPosition: {fileID: 4621666503728013488}
   attackRadius: 1
   initAggroRadius: 10
-  aggroRadius: 15
+  aggroRadius: 20
 --- !u!4 &2398969841645686231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1176938149113893585, guid: 6940dea072aec734bb30bb89bffbc064, type: 3}

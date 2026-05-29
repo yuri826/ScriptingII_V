@@ -78,10 +78,10 @@ public class EnemyMelee : EnemyBase
     public override void OnDamage(int damage)
     {
         base.OnDamage(damage);
-        if (enemyState.elementState == ElementState.Normal) state = EnemyState.Approach;
+        if (!iceCube.activeSelf) state = EnemyState.Approach;
     }
 
-    public void MeleeAttack()
+    private void MeleeAttack()
     {
         Physics.OverlapSphereNonAlloc(attackPosition.position, attackRadius, hitColliders, playerMask);
 
@@ -124,6 +124,8 @@ public class EnemyMelee : EnemyBase
     public override void OnFreeze()
     {
         base.OnFreeze();
+        print(iceCube.activeSelf);
+        print(enemyState.elementState);
         state = EnemyState.Idle;
     }
 

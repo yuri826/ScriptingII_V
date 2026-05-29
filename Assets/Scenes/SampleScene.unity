@@ -5071,6 +5071,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PassiveSkill
       objectReference: {fileID: 0}
+    - target: {fileID: 3854512079468067453, guid: beff33c0fbf0a3e4f974bd6c96a36605, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010265471022163253, guid: beff33c0fbf0a3e4f974bd6c96a36605, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5010265471022163253, guid: beff33c0fbf0a3e4f974bd6c96a36605, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
@@ -13482,14 +13490,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1749916669597449476, guid: 46f314f67113b174db9ceb3857817531, type: 3}
-      propertyPath: aggroRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749916669597449476, guid: 46f314f67113b174db9ceb3857817531, type: 3}
-      propertyPath: enemyState.<maxHealth>k__BackingField
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 1866967018423611429, guid: 46f314f67113b174db9ceb3857817531, type: 3}
       propertyPath: m_Name
       value: EnemyMelee
