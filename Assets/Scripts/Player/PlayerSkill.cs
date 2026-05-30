@@ -32,7 +32,7 @@ public class PlayerSkill : ScriptableObject
         if (playerState.currentMana < manaCost) return;
         
         playerState.ChangeMana(-manaCost);
-
+    
         //Check if player is at a nice distance
         //Move / continue
         //ExecuteSkill

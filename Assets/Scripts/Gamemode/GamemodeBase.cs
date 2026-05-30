@@ -153,25 +153,19 @@ public class GamemodeBase : MonoBehaviour
     public void Restart()
     {
         uiManager.TransitionIn();
-        StartCoroutine(LoadSceneTime(1));
+        StartCoroutine(LoadSceneTime(1, SceneManager.GetActiveScene().name));
     }
 
     public void Quit()
     {
         uiManager.TransitionIn();
-        StartCoroutine(QuitTime(1));
+        StartCoroutine(LoadSceneTime(1, "MainMenu"));
     }
 
-    private IEnumerator LoadSceneTime(int time)
+    private IEnumerator LoadSceneTime(int time, string scene)
     {
         yield return new WaitForSeconds(time);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-    
-    private IEnumerator QuitTime(int time)
-    {
-        yield return new WaitForSeconds(time);
-        Application.Quit();
+        SceneManager.LoadScene(scene);
     }
 
     public PlayerLogic GetPlayer() {

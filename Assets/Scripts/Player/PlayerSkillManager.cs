@@ -36,12 +36,14 @@ public class PlayerSkillManager: GamemodeSubsystem
     
     public void ExecuteCurrentSkill(Vector3 mouseRayHit)
     {
+        if (gamemodeParent.GetPlayerState().currentMana < currentActiveSkill.manaCost) return;
         AudioManager.Instance.PlaySFX(currentActiveSkill.sfx);
         currentActiveSkill?.ExecuteSkill(mouseRayHit);
     }
 
     public void ExecuteCurrentSkillMouse(Vector3 mouseRayHit)
     {
+        if (gamemodeParent.GetPlayerState().currentMana < currentActiveSkill.manaCost) return;
         AudioManager.Instance.PlaySFX(currentActiveSkill.sfx);        
         currentActiveSkill?.ExecuteSkill(mouseRayHit);
     }
