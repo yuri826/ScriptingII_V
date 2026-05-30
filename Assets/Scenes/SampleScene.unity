@@ -5051,8 +5051,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
+  m_sharedMaterial: {fileID: -143273055690969752, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14762,8 +14762,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
+  m_sharedMaterial: {fileID: -143273055690969752, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19605,19 +19605,19 @@ PrefabInstance:
     - target: {fileID: 2789474466676320118, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: dialogue.<entries>k__BackingField.Array.data[0].<portrait>k__BackingField
       value: 
-      objectReference: {fileID: 21300000, guid: e85b96ed01b72b143b713295895531a6, type: 3}
+      objectReference: {fileID: 21300000, guid: f5708ed7b3c476a42967342ba634079c, type: 3}
     - target: {fileID: 2789474466676320118, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: dialogue.<entries>k__BackingField.Array.data[1].<portrait>k__BackingField
       value: 
-      objectReference: {fileID: 21300000, guid: 59ef0eefcd167d441b659a9add639f5e, type: 3}
+      objectReference: {fileID: 21300000, guid: 9d994e431b7d0f2479caa05c70562e33, type: 3}
     - target: {fileID: 2789474466676320118, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: dialogue.<entries>k__BackingField.Array.data[2].<portrait>k__BackingField
       value: 
-      objectReference: {fileID: 21300000, guid: e85b96ed01b72b143b713295895531a6, type: 3}
+      objectReference: {fileID: 21300000, guid: f5708ed7b3c476a42967342ba634079c, type: 3}
     - target: {fileID: 2789474466676320118, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: dialogue.<entries>k__BackingField.Array.data[3].<portrait>k__BackingField
       value: 
-      objectReference: {fileID: 21300000, guid: 59ef0eefcd167d441b659a9add639f5e, type: 3}
+      objectReference: {fileID: 21300000, guid: 9d994e431b7d0f2479caa05c70562e33, type: 3}
     - target: {fileID: 7265522244044329976, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: m_Name
       value: NPCBase
@@ -31918,15 +31918,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.8}
+  m_Color: {r: 0.4641509, g: 0.4641509, b: 0.4641509, a: 0.8}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: eb6e6c81950c63d469ec3692e1c7a4ba, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
