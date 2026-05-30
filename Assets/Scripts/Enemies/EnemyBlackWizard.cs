@@ -44,6 +44,18 @@ namespace Enemy
             }
         }
 
+        public override void OnFreeze()
+        {
+            //Dont freeze
+            //base.OnFreeze();
+        }
+        
+        public override void OnDie()
+        {
+            base.OnDie();
+            GamemodeBase.Instance.onWin?.Invoke();
+        }
+
         public void Shoot(Vector3 direction)
         {
             print("Shoot");

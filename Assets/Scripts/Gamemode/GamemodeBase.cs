@@ -22,6 +22,9 @@ public class GamemodeBase : MonoBehaviour
 
     public delegate void OnDie();
     public OnDie onDie;
+    
+    public delegate void OnWin();
+    public OnWin onWin;
 
     private void Awake()
     {
@@ -52,6 +55,10 @@ public class GamemodeBase : MonoBehaviour
         onDie += uiManager.OnDie;
         onDie += gameHUD.OnDie;
         onDie += inputManager.OnDie;
+
+        onWin += uiManager.OnWin;
+        onWin += gameHUD.OnDie;
+        onWin += inputManager.OnDie;
     }
 
     #region States

@@ -27,6 +27,9 @@ public class UIManager : GamemodeSubsystem
     [SerializeField] private GameObject gameOverCanvas;
     [SerializeField] private Animator transitionAnim;
  
+    [Header("Win")] 
+    [SerializeField] private GameObject winCanvas;
+    
     public PlayerInventory GetPlayerInventory()
     {
         return playerInventory;
@@ -103,5 +106,10 @@ public class UIManager : GamemodeSubsystem
     public void TransitionIn()
     {
         transitionAnim.SetTrigger("TransitionIn");
+    }
+
+    public void OnWin()
+    {
+        winCanvas.SetActive(true);
     }
 }
