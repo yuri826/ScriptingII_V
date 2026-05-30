@@ -44,4 +44,9 @@ public class InputManager : GamemodeSubsystem
     {
         inputReader.DisableGameplay();
     }
+
+    public void OnDie()
+    {
+        DisableGameplay();
+    }
 }

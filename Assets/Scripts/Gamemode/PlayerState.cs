@@ -63,6 +63,11 @@ public class PlayerState : GamemodeSubsystem
         {
             gamemodeParent.GetUiManager().CloseMenus();
         }
+
+        if (currentHealth <= 0)
+        {
+            gamemodeParent.onDie?.Invoke();
+        }
     }
 
     public void FillHealth(int value)

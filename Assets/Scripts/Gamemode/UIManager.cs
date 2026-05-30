@@ -22,6 +22,10 @@ public class UIManager : GamemodeSubsystem
     [Header("Shop")] 
     private bool isShopOpened = false;
     [SerializeField] private ShopMenuManager shopManager;
+
+    [Header("GameOver")] 
+    [SerializeField] private GameObject gameOverCanvas;
+    [SerializeField] private Animator transitionAnim;
  
     public PlayerInventory GetPlayerInventory()
     {
@@ -83,5 +87,21 @@ public class UIManager : GamemodeSubsystem
         //Shop
         isShopOpened = false;
         shopManager.HideMenu();
+    }
+
+    public void OnDie()
+    {
+        CloseMenus();
+        ShowGameover();
+    }
+
+    private void ShowGameover()
+    {
+        gameOverCanvas.SetActive(true);
+    }
+
+    public void TransitionIn()
+    {
+        transitionAnim.SetTrigger("TransitionIn");
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using Player;
+using UnityEngine.SceneManagement;
 
 public class GamemodeBase : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class GamemodeBase : MonoBehaviour
     [SerializeField] private PlayerSkillManager skillManager;
     [SerializeField] private HUD gameHUD;
     [SerializeField] private PlayerState playerState;
+
+    public delegate void OnDie();
+    public OnDie onDie;
 
     private void Awake()
     {
@@ -42,7 +46,14 @@ public class GamemodeBase : MonoBehaviour
         inputManager.OnEnable();
         gameHUD.OnEnable();
     }
-    
+
+    private void Start()
+    {
+        onDie += uiManager.OnDie;
+        onDie += gameHUD.OnDie;
+        onDie += inputManager.OnDie;
+    }
+
     #region States
 
     public void StartManaRegen()
@@ -155,6 +166,30 @@ public class GamemodeBase : MonoBehaviour
     }
     
     #endregion
+
+    public void Restart()
+    {
+        uiManager.TransitionIn();
+        StartCoroutine(LoadSceneTime(1));
+    }
+
+    public void Quit()
+    {
+        uiManager.TransitionIn();
+        StartCoroutine(QuitTime(1));
+    }
+
+    private IEnumerator LoadSceneTime(int time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    
+    private IEnumerator QuitTime(int time)
+    {
+        yield return new WaitForSeconds(time);
+        Application.Quit();
+    }
 
     public PlayerLogic GetPlayer() {
         return playerPawn;

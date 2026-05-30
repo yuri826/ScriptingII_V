@@ -124,4 +124,9 @@ public class HUD : GamemodeSubsystem
     {
         HudObject.SetActive(true);
     }
+
+    public void OnDie()
+    {
+        HideHUD();
+    }
 }
