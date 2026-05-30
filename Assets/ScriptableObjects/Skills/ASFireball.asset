@@ -18,6 +18,13 @@ MonoBehaviour:
   <skillType>k__BackingField: 0
   <buyCost>k__BackingField: 200
   <manaCost>k__BackingField: 5
+  <sfx>k__BackingField:
+    Guid:
+      Data1: 1255279814
+      Data2: 1168802775
+      Data3: -301630785
+      Data4: -1320111122
+    Path: event:/sfxCast
   fireballObj: {fileID: 7333006673771419709, guid: 3e9bd4007744eda44aa38a013f6b84db, type: 3}
   projectileMask:
     serializedVersion: 2

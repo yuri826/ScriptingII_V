@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Interfaces;
 using UnityEngine;
 
@@ -12,6 +13,13 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        StartCoroutine(DestroyBulletRoutine());
+    }
+
+    private IEnumerator DestroyBulletRoutine()
+    {
+        yield return new WaitForSeconds(7);
+        DestroyBullet();
     }
 
     public void Init(Vector3 direction, int damage)
@@ -23,6 +31,11 @@ public class Projectile : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Wall"))
+        {
+            DestroyBullet();
+        }
+        
         if (other.TryGetComponent(out IDamageable damageable))
         {
             damageable.OnDamage(damage);

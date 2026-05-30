@@ -19,5 +19,12 @@ MonoBehaviour:
   <skillType>k__BackingField: 0
   <buyCost>k__BackingField: 1000
   <manaCost>k__BackingField: 8
+  <sfx>k__BackingField:
+    Guid:
+      Data1: -1332657352
+      Data2: 1332106157
+      Data3: -552500328
+      Data4: -1791869764
+    Path: event:/sfxRocks
   rockObj: {fileID: 7333006673771419709, guid: d5a91bddd3ef124409eb1d40dcd48dca, type: 3}
   damage: 4

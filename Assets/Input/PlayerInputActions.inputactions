@@ -303,6 +303,39 @@
                     "action": "UIClick",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "84b85f4c-3f8b-4ce9-bf35-47a370ea63a0",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UIClick",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "fc306e22-189c-4203-b070-6d18a96757b8",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "UIClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "9d6da1e4-3d28-475f-b43d-01d9d58772be",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KBM",
+                    "action": "UIClick",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

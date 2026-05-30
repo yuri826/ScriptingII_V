@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -35,11 +36,13 @@ public class PlayerSkillManager: GamemodeSubsystem
     
     public void ExecuteCurrentSkill(Vector3 mouseRayHit)
     {
+        AudioManager.Instance.PlaySFX(currentActiveSkill.sfx);
         currentActiveSkill?.ExecuteSkill(mouseRayHit);
     }
 
     public void ExecuteCurrentSkillMouse(Vector3 mouseRayHit)
     {
+        AudioManager.Instance.PlaySFX(currentActiveSkill.sfx);        
         currentActiveSkill?.ExecuteSkill(mouseRayHit);
     }
 

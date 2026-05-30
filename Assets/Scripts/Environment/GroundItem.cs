@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 using UI;
 
@@ -8,6 +9,8 @@ public class GroundItem : InteractableObject
     
     [SerializeField] private InventoryItem inventoryItem;
     private SpriteRenderer spr;
+    
+    [SerializeField] private EventReference sfxPick;
 
     private void Awake()
     {
@@ -17,6 +20,10 @@ public class GroundItem : InteractableObject
 
     public override void OnInteract()
     {
-        if (playerInventory.AddItemToInventory(inventoryItem)) Destroy(gameObject);
+        if (playerInventory.AddItemToInventory(inventoryItem))
+        {
+            AudioManager.Instance.PlaySFX(sfxPick);
+            Destroy(gameObject);
+        }
     }
 }

@@ -128,6 +128,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundItem
   inventoryItem: {fileID: 11400000, guid: 1efacb6828dcf43438fa816d2edc4a0b, type: 2}
+  sfxPick:
+    Guid:
+      Data1: -1285216468
+      Data2: 1095486530
+      Data3: -1783912562
+      Data4: -1896949611
+    Path: event:/sfxPick
 --- !u!1 &3318362954608001492
 GameObject:
   m_ObjectHideFlags: 0

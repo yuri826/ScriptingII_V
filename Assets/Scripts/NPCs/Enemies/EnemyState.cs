@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 
 namespace Enemy
@@ -15,6 +16,7 @@ namespace Enemy
         [field: SerializeField] public int maxHealth { get; set; }
         public float currentHealth { get; private set; }
         protected internal ElementState elementState = ElementState.Normal;
+        [SerializeField] private EventReference sfxDie;
 
         public override void OnAwake()
         {
@@ -28,6 +30,7 @@ namespace Enemy
             
             if (currentHealth <= 0)
             {
+                AudioManager.Instance.PlaySFX(sfxDie);
                 enemyParent.OnDie();
             }
         }

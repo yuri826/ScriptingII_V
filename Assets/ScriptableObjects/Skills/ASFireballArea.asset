@@ -19,6 +19,13 @@ MonoBehaviour:
   <skillType>k__BackingField: 0
   <buyCost>k__BackingField: 400
   <manaCost>k__BackingField: 25
+  <sfx>k__BackingField:
+    Guid:
+      Data1: 1255279814
+      Data2: 1168802775
+      Data3: -301630785
+      Data4: -1320111122
+    Path: event:/sfxCast
   fireAreaObj: {fileID: 4483480686797960467, guid: e773e9bdae493e7459204ecf9cc68c2c, type: 3}
   damage: 4
   timeToVanish: 5

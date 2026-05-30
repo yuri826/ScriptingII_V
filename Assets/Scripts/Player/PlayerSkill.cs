@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerSkill", menuName = "ScriptableObjects/PlayerSkill")]
@@ -9,6 +10,7 @@ public class PlayerSkill : ScriptableObject
     [field: SerializeField] public SkillType skillType { get; private set; }
     [field: SerializeField] public int buyCost { get; private set; }
     [field: SerializeField] public int manaCost { get; private set; }
+    [field: SerializeField] public EventReference sfx { get; private set; }
 
     protected virtual void ExecuteSkill()
     {

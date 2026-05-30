@@ -18,5 +18,12 @@ MonoBehaviour:
   <skillType>k__BackingField: 0
   <buyCost>k__BackingField: 450
   <manaCost>k__BackingField: 20
+  <sfx>k__BackingField:
+    Guid:
+      Data1: 1255279814
+      Data2: 1168802775
+      Data3: -301630785
+      Data4: -1320111122
+    Path: event:/sfxCast
   lightningObj: {fileID: 7333006673771419709, guid: 8e9ff5f18002ff4458670564d9a852aa, type: 3}
   damage: 10

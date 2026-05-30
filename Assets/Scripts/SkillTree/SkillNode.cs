@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,8 @@ public class SkillNode : MonoBehaviour
     [SerializeField] private Sprite acquiredPathSprite;
     [SerializeField] private Sprite unlockedSprite;
     [SerializeField] private Sprite lockedSprite;
+
+    [SerializeField] private EventReference sfxAcquire;
     
     private SkillTreeManager treeManager;
 
@@ -49,6 +52,8 @@ public class SkillNode : MonoBehaviour
     public void AcquireNode()
     {
         foreach (SkillNode node in nextNodes) node.UnlockNode();
+        
+        AudioManager.Instance.PlaySFX(sfxAcquire);
 
         nodeState = SkillNodeState.Acquired;
         

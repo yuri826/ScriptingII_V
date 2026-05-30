@@ -232,6 +232,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundMoney
   <moneyAmount>k__BackingField: 50
+  sfxAcquire:
+    Guid:
+      Data1: -2079000600
+      Data2: 1251664094
+      Data3: 1321712050
+      Data4: -1541747389
+    Path: event:/sfxMoney
 --- !u!1 &5305584745815689790
 GameObject:
   m_ObjectHideFlags: 0

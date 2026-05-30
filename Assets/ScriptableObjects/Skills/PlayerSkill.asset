@@ -19,3 +19,10 @@ MonoBehaviour:
   <skillType>k__BackingField: 0
   <buyCost>k__BackingField: 400
   <manaCost>k__BackingField: 5
+  <sfx>k__BackingField:
+    Guid:
+      Data1: 1255279814
+      Data2: 1168802775
+      Data3: -301630785
+      Data4: -1320111122
+    Path: event:/sfxCast

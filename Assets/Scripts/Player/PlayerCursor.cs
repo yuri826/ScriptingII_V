@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -12,6 +13,7 @@ namespace Player
         private GamemodeBase mainGamemode;
     
         [SerializeField] private CameraLogic camerota;
+        [SerializeField] private EventReference sfxClick;
     
         private void Start()
         {
@@ -22,6 +24,8 @@ namespace Player
         {
             //CameraRayInfo rayInfo = camerota.GetMouseRaycast(mousePos);
             CameraRayInfo rayInfo = playerPawn.GetPlayerCamera().GetMouseRaycast(mousePos);
+            
+            AudioManager.Instance.PlaySFX(sfxClick);
         
             //if (rayInfo is null) throw new NullReferenceException("No hay rayo de cámara");
         

@@ -148,6 +148,13 @@ MonoBehaviour:
   acquiredPathSprite: {fileID: 21300000, guid: 787e6dec64b7dc942bd1698fa89faf9c, type: 3}
   unlockedSprite: {fileID: 21300000, guid: da8deee132ea715478a2435a3b61247c, type: 3}
   lockedSprite: {fileID: 21300000, guid: eb95f25e49f7d964886f7d485ce7637e, type: 3}
+  sfxAcquire:
+    Guid:
+      Data1: -199456877
+      Data2: 1113748757
+      Data3: 635935675
+      Data4: 979200150
+    Path: event:/sfxAcquireSkill
 --- !u!114 &5631208037464380577
 MonoBehaviour:
   m_ObjectHideFlags: 0
