@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(EventReference newEvent)
     {
+        sfxEmmitter.Stop();
         sfxEmmitter.ChangeEvent(newEvent);
         sfxEmmitter.Play();
     }
