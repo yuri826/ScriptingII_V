@@ -17,5 +17,6 @@ MonoBehaviour:
   <Info>k__BackingField: Heals a lot of health.
   <Image>k__BackingField: {fileID: 21300000, guid: ec9e18aeb36ba0c48a564aca3186bcb6, type: 3}
   <Icon>k__BackingField: {fileID: 21300000, guid: ec9e18aeb36ba0c48a564aca3186bcb6, type: 3}
+  <GroundSprite>k__BackingField: {fileID: 21300000, guid: df1263f5c82aa0242b4833dd345eea9b, type: 3}
   <BuyPrice>k__BackingField: 50
   <cureAmount>k__BackingField: 35

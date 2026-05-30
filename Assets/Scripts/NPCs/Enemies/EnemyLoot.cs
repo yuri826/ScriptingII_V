@@ -1,23 +1,28 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Enemy
 {
     [Serializable]
     public class EnemyLoot : EnemySubsystem
     {
-        //[SerializeField] private EnemyLoot[] possibleLoot;
-        //[SerializeField] private int maxLoot;
+        [SerializeField] private int XPTogive;
+        [SerializeField] private GameObject[] possibleLoot;
+        [SerializeField] private int maxLoot;
 
-        public void DropLoot()
+        public void DropLoot(Vector3 pos)
         {
-            // int lootAmount = Random.Range(0, maxLoot);
-            //
-            // for (int i = 0; i < lootAmount; i++)
-            // {
-            //     int lootIndex = Random.Range(0, possibleLoot.Length);
-            //     Instantiate(possibleLoot[lootIndex]);
-            // }
+            GamemodeBase.Instance.GetPlayerState().ChangeXp(XPTogive);
+            int lootAmount = Random.Range(0, maxLoot);
+            
+            for (int i = 0; i < lootAmount; i++)
+            {
+                int lootIndex = Random.Range(0, possibleLoot.Length);
+                GameObject.Instantiate(possibleLoot[lootIndex], 
+                    pos + new Vector3(Random.Range(-1,1),0,Random.Range(-1,1)), 
+                    Quaternion.identity);
+            }
         }
     }
 }

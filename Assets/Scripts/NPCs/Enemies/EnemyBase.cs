@@ -80,7 +80,7 @@ namespace Enemy
 
         public virtual void OnDie()
         {
-            enemyLoot.DropLoot();
+            enemyLoot.DropLoot(this.transform.position);
             Destroy(gameObject);
         }
 

@@ -115,12 +115,6 @@ public class EnemyMelee : EnemyBase
         }
     }
     
-    public override void OnDie()
-    {
-        enemyLoot.DropLoot();
-        Destroy(gameObject);
-    }
-    
     public override void OnFreeze()
     {
         base.OnFreeze();

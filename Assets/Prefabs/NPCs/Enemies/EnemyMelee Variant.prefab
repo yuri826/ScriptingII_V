@@ -128,6 +128,14 @@ MonoBehaviour:
     <maxHealth>k__BackingField: 25
   enemyHUD:
     healthbarFill: {fileID: 5315251273015705313}
+  enemyLoot:
+    XPTogive: 200
+    possibleLoot:
+    - {fileID: 8697676958391372259, guid: c5913a0d33fccb441ab943ffd673483f, type: 3}
+    - {fileID: 8697676958391372259, guid: b2fd5194e08e6784b95edd1b3a9ae649, type: 3}
+    - {fileID: 8697676958391372259, guid: f79c1f886b1d1d447a95ee17540e42d2, type: 3}
+    - {fileID: 8697676958391372259, guid: f79c1f886b1d1d447a95ee17540e42d2, type: 3}
+    maxLoot: 2
   iceCube: {fileID: 6384424243563236649}
   damage: 7
   playerMask:
