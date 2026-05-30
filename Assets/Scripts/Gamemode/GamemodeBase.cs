@@ -123,32 +123,20 @@ public class GamemodeBase : MonoBehaviour
         if (inventoryOpened)
         {
             inputManager.EnableGameplay();
-            uiManager.OpenInventory(false);
+            uiManager.OpenInventory();
         }
         else
         {
             inputManager.DisableGameplay();
-            uiManager.OpenInventory(true);
+            uiManager.OpenInventory();
         }
         
         inventoryOpened = !inventoryOpened;
     }
     
-    private bool skillTreeOpened = false;
     public void OpenSkillTree()
     {
-        if (skillTreeOpened)
-        {
-            inputManager.EnableGameplay();
-            uiManager.OpenSkillTree(false);
-        }
-        else
-        {
-            inputManager.DisableGameplay();
-            uiManager.OpenSkillTree(true);
-        }
-        
-        skillTreeOpened = !skillTreeOpened;
+        uiManager.OpenSkillTree();
     }
 
     #endregion

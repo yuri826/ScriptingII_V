@@ -45,27 +45,37 @@ public class UIManager : GamemodeSubsystem
         dialogueManager.StartStory(dialogue);
     }
 
-    public void OpenInventory(bool open)
+    public void OpenInventory()
     {
         if (isSkillTreeOpened || isShopOpened) return;
-        
+
+        isInventoryOpened = !isInventoryOpened;
         gamemodeParent.GetHUD().CloseHotbarInstant();
         
-        inventoryPanel.SetActive(open);
+        if (isInventoryOpened) gamemodeParent.GetInputManager().EnableHUDInteraction();
+        else gamemodeParent.GetInputManager().DisableHUDInteraction();
+        
+        inventoryPanel.SetActive(isInventoryOpened);
         inventoryInfoPanel.SetActive(false);
     }
 
-    public void OpenSkillTree(bool open)
+    public void OpenSkillTree()
     {
         if (isInventoryOpened || isShopOpened) return;
         
-        skillTreePanel.SetActive(open);
+        if (isSkillTreeOpened) gamemodeParent.GetInputManager().EnableHUDInteraction();
+        else gamemodeParent.GetInputManager().DisableHUDInteraction();
+
+        isSkillTreeOpened = !isSkillTreeOpened;
+        skillTreePanel.SetActive(isSkillTreeOpened);
         skillTreeInfoPanel.SetActive(false);
     }
 
     public void OpenShopMenu(ShopData shopData)
     {
         gamemodeParent.GetHUD().CloseHotbarInstant();
+        
+        gamemodeParent.GetInputManager().EnableHUDInteraction();
         
         CloseMenus();
         isShopOpened = true;

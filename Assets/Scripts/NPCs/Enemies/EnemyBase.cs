@@ -29,7 +29,7 @@ namespace Enemy
             enemyHUD.OnAwake();
             enemyLoot.OnAwake();
             
-            iceCube.SetActive(false);
+            iceCube?.SetActive(false);
             
             navMeshAgent = GetComponent<NavMeshAgent>();
         }

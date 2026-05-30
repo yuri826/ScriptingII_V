@@ -156,6 +156,10 @@ MonoBehaviour:
     <maxHealth>k__BackingField: 20
   enemyHUD:
     healthbarFill: {fileID: 8708863823662784999}
+  enemyLoot:
+    XPTogive: 0
+    possibleLoot: []
+    maxLoot: 0
   iceCube: {fileID: 7603625775444136495}
 --- !u!1 &3220414966411870676
 GameObject:

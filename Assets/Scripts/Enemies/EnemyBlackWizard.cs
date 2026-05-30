@@ -17,7 +17,6 @@ namespace Enemy
         private void Start()
         {
             playerTransform = GamemodeBase.Instance.GetPlayer().transform;
-            navMeshAgent.SetDestination(playerTransform.position);
 
             StartCoroutine(AreaShoot());
         }
@@ -41,6 +40,11 @@ namespace Enemy
 
                 print("Out");
                 yield return new WaitForSeconds(areaShootTime);
+                
+                if (Vector3.Distance(this.transform.position, playerTransform.position) < 15)
+                {
+                    navMeshAgent.SetDestination(playerTransform.position);
+                }
             }
         }
 

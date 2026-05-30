@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActions, PlayerInputActions.IHUDInteractionActions
 {
     private PlayerInputActions inputActions;
+    private bool canClick = true;
     
     public delegate void OnMove(Vector2 inputDir);
     public OnMove onMove;
@@ -55,6 +56,7 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 
     public void OnLClick(InputAction.CallbackContext context)
     {
+        if (!canClick) return;
         if (context.started) onClickStarted?.Invoke(context.ReadValue<Vector2>());
     }
     
@@ -130,4 +132,14 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     }
     
     #endregion
+
+    public void DisableClick()
+    {
+        canClick = false;
+    }
+
+    public void EnableClick()
+    {
+        canClick = true;
+    }
 }

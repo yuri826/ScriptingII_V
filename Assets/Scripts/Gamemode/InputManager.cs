@@ -20,14 +20,12 @@ public class InputManager : GamemodeSubsystem
     
     public void EnableHUDInteraction()
     {
-        inputReader.DisableGameplay();
-        inputReader.EnableHUDInteraction(); 
+        inputReader.DisableClick();
     }
 
     public void DisableHUDInteraction()
     {
-        inputReader.EnableGameplay();
-        inputReader.DisableHUDInteraction();
+        inputReader.EnableClick();
     }
     
     public void EnableGameplay()
@@ -38,11 +36,13 @@ public class InputManager : GamemodeSubsystem
     public void DisableGameplay()
     {
         inputReader.DisableGameplay();
+        inputReader.DisableClick();
     }
 
     public void DialogueInput()
     {
         inputReader.DisableGameplay();
+        inputReader.EnableClick();
     }
 
     public void OnDie()
