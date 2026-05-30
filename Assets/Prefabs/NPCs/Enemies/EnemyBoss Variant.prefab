@@ -410,6 +410,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &4129270873262520837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7603625775444136495, guid: 6940dea072aec734bb30bb89bffbc064, type: 3}
+  m_PrefabInstance: {fileID: 5821919155799451690}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4656387361938995963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1176938149113893585, guid: 6940dea072aec734bb30bb89bffbc064, type: 3}
@@ -433,14 +438,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy.EnemyBlackWizard
   enemyState:
-    <maxHealth>k__BackingField: 50
+    <maxHealth>k__BackingField: 200
   enemyHUD:
     healthbarFill: {fileID: 2888924066366638541}
   enemyLoot:
     XPTogive: 0
     possibleLoot: []
     maxLoot: 0
-  iceCube: {fileID: 0}
+  iceCube: {fileID: 4129270873262520837}
   bullet: {fileID: 7333006673771419709, guid: fdc5c64de5371784fa8ed0ba92f1ecb4, type: 3}
   bulletDamage: 0
   areaShootTime: 2
