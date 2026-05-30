@@ -428,6 +428,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMelee
   enemyState:
     <maxHealth>k__BackingField: 25
+    sfxDie:
+      Guid:
+        Data1: -119072265
+        Data2: 1076603880
+        Data3: 2108981412
+        Data4: 843333068
+      Path: event:/sfxEnemyDie
   enemyHUD:
     healthbarFill: {fileID: 5315251273015705313}
   enemyLoot:

@@ -9,7 +9,8 @@ enum EnemyState
 {
     Idle,
     Approach,
-    Attack
+    Attack,
+    Freeze
 }
 
 public class EnemyMelee : EnemyBase
@@ -118,8 +119,7 @@ public class EnemyMelee : EnemyBase
     public override void OnFreeze()
     {
         base.OnFreeze();
-        print(iceCube.activeSelf);
-        print(enemyState.elementState);
+        navMeshAgent.isStopped = true;
         state = EnemyState.Idle;
     }
 
