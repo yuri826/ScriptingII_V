@@ -87,12 +87,12 @@ namespace Enemy
         public virtual void OnFreeze()
         {
             iceCube.SetActive(true);
-            StopAllCoroutines();
             StartCoroutine(FreezeTime());
         }
 
         protected virtual void OnEndFreeze()
         {
+            navMeshAgent.isStopped = false;
             enemyState.elementState = ElementState.Normal;
             iceCube.SetActive(false);
         }

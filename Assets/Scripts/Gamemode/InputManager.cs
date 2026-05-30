@@ -42,7 +42,6 @@ public class InputManager : GamemodeSubsystem
     public void DialogueInput()
     {
         inputReader.DisableGameplay();
-        inputReader.EnableClick();
     }
 
     public void OnDie()

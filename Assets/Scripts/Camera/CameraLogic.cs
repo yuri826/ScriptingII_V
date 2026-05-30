@@ -13,6 +13,11 @@ public class CameraLogic : MonoBehaviour
     {
         mainCamera = GetComponent<Camera>();
     }
+    
+    private void Start()
+    {
+        if (mainCamera is null) mainCamera = GetComponent<Camera>();
+    }
 
     private void LateUpdate()
     {
@@ -26,7 +31,7 @@ public class CameraLogic : MonoBehaviour
         Vector3 mouseReturn = Vector3.zero;
         CameraRayOutObject outObject = CameraRayOutObject.Nothing;
         bool rayHasHit = false;
-        
+
         Ray ray = mainCamera.ScreenPointToRay(mousePosition);
         RaycastHit hit;
 

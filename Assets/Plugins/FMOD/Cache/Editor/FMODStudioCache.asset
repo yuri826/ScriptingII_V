@@ -69,10 +69,10 @@ MonoBehaviour:
   Path: FMOD/Diablolike/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639157572476278003
+  lastModified: 639157592954263161
   FileSizes:
   - Name: Desktop
-    Value: 200832
+    Value: 3996992
   Exists: 1
 --- !u!114 &-6670531373714735293
 MonoBehaviour:
@@ -143,10 +143,10 @@ MonoBehaviour:
   Path: FMOD/Diablolike/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639157572476303135
+  lastModified: 639157592954278239
   FileSizes:
   - Name: Desktop
-    Value: 1166
+    Value: 1260
   Exists: 1
 --- !u!114 &-1819627859972689999
 MonoBehaviour:
@@ -229,13 +229,15 @@ MonoBehaviour:
   - {fileID: -6663442591206726357}
   - {fileID: -1367938697031554885}
   - {fileID: 3583699696455370481}
+  - {fileID: 4105894791578138266}
+  - {fileID: 6452162939979485183}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7133028801870710271}
   StringsBanks:
   - {fileID: -5566330994575568850}
   cacheVersion: 131847
-  cacheTime: 639157572476303135
+  cacheTime: 639157592954278239
   SerializableEventsDict:
   - key: event:/sfxClick
     index: 0
@@ -259,6 +261,10 @@ MonoBehaviour:
     index: 9
   - key: event:/sfxButton
     index: 10
+  - key: event:/mMenu
+    index: 11
+  - key: event:/mMain
+    index: 12
 --- !u!114 &875846494538279354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,3 +400,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 250
+--- !u!114 &4105894791578138266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/mMenu
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/mMenu
+  Guid:
+    Data1: 603400801
+    Data2: 1179501552
+    Data3: -1840623709
+    Data4: -413826786
+  Banks:
+  - {fileID: -7133028801870710271}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 101647
+--- !u!114 &6452162939979485183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/mMain
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/mMain
+  Guid:
+    Data1: -882667075
+    Data2: 1338649728
+    Data3: -661623886
+    Data4: -797222125
+  Banks:
+  - {fileID: -7133028801870710271}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 192000

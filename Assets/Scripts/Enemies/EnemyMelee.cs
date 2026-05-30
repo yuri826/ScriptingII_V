@@ -120,7 +120,8 @@ public class EnemyMelee : EnemyBase
     {
         base.OnFreeze();
         navMeshAgent.isStopped = true;
-        state = EnemyState.Idle;
+        if (searchPlayerRoutine is not null) StopCoroutine(searchPlayerRoutine);
+        state = EnemyState.Freeze;
     }
 
     protected override void OnEndFreeze()

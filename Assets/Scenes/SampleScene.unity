@@ -19624,7 +19624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100713718219868710, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7752767
+      value: -9.71
       objectReference: {fileID: 0}
     - target: {fileID: 9100713718219868710, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19632,7 +19632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9100713718219868710, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.0287757
+      value: -9.94
       objectReference: {fileID: 0}
     - target: {fileID: 9100713718219868710, guid: a52017173be726347ab2b6a14bd7aedc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23792,7 +23792,7 @@ MonoBehaviour:
     <maxHealth>k__BackingField: 50
     <healthRegen>k__BackingField: 1
     <healthRegenTime>k__BackingField: 0.4
-    <XP>k__BackingField: 500
+    <XP>k__BackingField: 1700
     <money>k__BackingField: 1000
 --- !u!4 &1463053725
 Transform:
@@ -27052,6 +27052,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1657170236}
+  - component: {fileID: 1657170237}
   m_Layer: 0
   m_Name: MusicEmmiter
   m_TagString: Untagged
@@ -27074,6 +27075,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1337204504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1657170237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657170235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -882667075
+      Data2: 1338649728
+      Data3: -661623886
+      Data4: -797222125
+    Path: event:/mMain
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1687139729
 GameObject:
   m_ObjectHideFlags: 0
@@ -28853,7 +28885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1794558595
 RectTransform:
   m_ObjectHideFlags: 0

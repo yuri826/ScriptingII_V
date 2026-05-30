@@ -75,7 +75,6 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 
     public void OnUIClick(InputAction.CallbackContext context)
     {
-        if (!canClick) return;
         if (context.started) onClickStarted?.Invoke(context.ReadValue<Vector2>());
     }
 

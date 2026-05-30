@@ -64,7 +64,8 @@ namespace UI
             {
                 shopEntries[i].Deselect();
             }
-            
+
+            itemImage.sprite = item.Icon;
             itemName.text = item.Name;
             itemType.text = item.Type;
             itemDescription.text = item.Info;
