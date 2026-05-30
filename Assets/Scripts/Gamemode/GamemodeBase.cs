@@ -117,21 +117,9 @@ public class GamemodeBase : MonoBehaviour
 
     #region UI
 
-    private bool inventoryOpened = false;
     public void OpenInventory()
     {
-        if (inventoryOpened)
-        {
-            inputManager.EnableGameplay();
-            uiManager.OpenInventory();
-        }
-        else
-        {
-            inputManager.DisableGameplay();
-            uiManager.OpenInventory();
-        }
-        
-        inventoryOpened = !inventoryOpened;
+        uiManager.OpenInventory();
     }
     
     public void OpenSkillTree()

@@ -17,5 +17,13 @@ MonoBehaviour:
   <Info>k__BackingField: Expands your max health permanently.
   <Image>k__BackingField: {fileID: 21300000, guid: d6a621c5a156c764387adab868abcc59, type: 3}
   <Icon>k__BackingField: {fileID: 21300000, guid: d6a621c5a156c764387adab868abcc59, type: 3}
+  <GroundSprite>k__BackingField: {fileID: 21300000, guid: df1263f5c82aa0242b4833dd345eea9b, type: 3}
   <BuyPrice>k__BackingField: 100
+  <sfx>k__BackingField:
+    Guid:
+      Data1: -956527997
+      Data2: 1290116676
+      Data3: 402840488
+      Data4: -2025382733
+    Path: event:/sfxUse
   <maxManaAdd>k__BackingField: 15

@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,10 @@ namespace UI
         [SerializeField] private Transform itemParent;
         [SerializeField] private GameObject shopEntryPrefab;
         private List<ShopEntryObject> shopEntries = new List<ShopEntryObject>();
+        private ShopEntryObject currentObject;
+
+        [Header("Audio")] 
+        [SerializeField] private EventReference sfxbuy;
 
         [Header("Panels")] 
         [SerializeField] private GameObject itemListPanel;
@@ -43,6 +48,16 @@ namespace UI
             itemListPanel.SetActive(true);
         }
 
+        public void TryBuyItem()
+        {
+            if ((currentObject.item.BuyPrice <= GamemodeBase.Instance.GetPlayerState().money)
+                && (GamemodeBase.Instance.GetUiManager().GetPlayerInventory().AddItemToInventory(currentObject.item)))
+            {
+                GamemodeBase.Instance.GetPlayerState().ChangeMoney(-currentObject.item.BuyPrice);
+                AudioManager.Instance.PlaySFX(sfxbuy);
+            }
+        }
+
         public void ShowInfoPanel(InventoryItem item, ShopEntryObject entry)
         {
             for (int i = 0; i < shopEntries.Count; i++)
@@ -56,10 +71,17 @@ namespace UI
             itemPrice.text = item.BuyPrice.ToString();
             itemDescriptionPanel.SetActive(true);
 
+            currentObject = entry;
             entry.Select();
         }
 
         public void HideMenu()
+        {
+            GamemodeBase.Instance.GetUiManager().CloseShop();
+            Hide();
+        }
+
+        private void Hide()
         {
             itemDescriptionPanel.SetActive(false);
             itemListPanel.SetActive(false);

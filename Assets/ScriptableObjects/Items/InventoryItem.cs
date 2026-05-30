@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +13,10 @@ public class InventoryItem : ScriptableObject
     [field:SerializeField] public Sprite Icon { get; private set; }
     [field:SerializeField] public Sprite GroundSprite { get; private set; }
     [field:SerializeField] public int BuyPrice { get; private set; }
+    [field:SerializeField] public EventReference sfx { get; private set; }
 
     public virtual void Consume()
     {
-        
+        AudioManager.Instance.PlaySFX(sfx);
     }
 }

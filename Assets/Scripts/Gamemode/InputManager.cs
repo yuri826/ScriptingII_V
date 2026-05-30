@@ -20,12 +20,12 @@ public class InputManager : GamemodeSubsystem
     
     public void EnableHUDInteraction()
     {
-        inputReader.DisableClick();
+        inputReader.EnableHUDInteraction();
     }
 
     public void DisableHUDInteraction()
     {
-        inputReader.EnableClick();
+        inputReader.DisableHUDInteraction();
     }
     
     public void EnableGameplay()

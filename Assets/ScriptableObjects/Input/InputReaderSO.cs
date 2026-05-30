@@ -75,6 +75,7 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
 
     public void OnUIClick(InputAction.CallbackContext context)
     {
+        if (!canClick) return;
         if (context.started) onClickStarted?.Invoke(context.ReadValue<Vector2>());
     }
 
@@ -106,16 +107,19 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     
     public void EnableHUDInteraction()
     {
-        inputActions.FindAction("LClick").Disable();
+        canClick = false;
+        //inputActions.FindAction("LClick").Disable();
     }
     
     public void DisableHUDInteraction()
     {
-        if (inputActions.Gameplay.enabled) inputActions.FindAction("LClick").Enable();
+        canClick = true;
+        //if (inputActions.Gameplay.enabled) inputActions.FindAction("LClick").Enable();
     }
 
     public void DisableGameplay()
     {
+        canClick = false;
         inputActions.Gameplay.Disable();
         inputActions.HUDInteraction.Enable();
 
@@ -126,6 +130,7 @@ public class InputReaderSO : ScriptableObject, PlayerInputActions.IGameplayActio
     
     public void EnableGameplay()
     {
+        canClick = true; 
         inputActions.Gameplay.Enable();
         //inputActions.FindAction("LClick").Enable();
         inputActions.HUDInteraction.Disable();

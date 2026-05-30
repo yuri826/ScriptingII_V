@@ -6,7 +6,7 @@ namespace UI
 {
     public class ShopEntryObject : MonoBehaviour
     {
-        private InventoryItem item;
+        public InventoryItem item { get; set; }
         private ShopMenuManager menuManager;
 
         [Header("Components")] 

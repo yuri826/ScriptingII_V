@@ -19,3 +19,10 @@ MonoBehaviour:
   <Icon>k__BackingField: {fileID: 21300000, guid: f320f56f2c3d55a42afc7f95e6ab9122, type: 3}
   <GroundSprite>k__BackingField: {fileID: 21300000, guid: 3218fa3a66a1b4347bcb01ad36676e5c, type: 3}
   <BuyPrice>k__BackingField: 500
+  <sfx>k__BackingField:
+    Guid:
+      Data1: -956527997
+      Data2: 1290116676
+      Data3: 402840488
+      Data4: -2025382733
+    Path: event:/sfxUse

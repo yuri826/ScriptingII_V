@@ -52,8 +52,8 @@ public class UIManager : GamemodeSubsystem
         isInventoryOpened = !isInventoryOpened;
         gamemodeParent.GetHUD().CloseHotbarInstant();
         
-        if (isInventoryOpened) gamemodeParent.GetInputManager().EnableHUDInteraction();
-        else gamemodeParent.GetInputManager().DisableHUDInteraction();
+       // if (isInventoryOpened) gamemodeParent.GetInputManager().EnableHUDInteraction();
+        //else gamemodeParent.GetInputManager().DisableHUDInteraction();
         
         inventoryPanel.SetActive(isInventoryOpened);
         inventoryInfoPanel.SetActive(false);
@@ -63,8 +63,8 @@ public class UIManager : GamemodeSubsystem
     {
         if (isInventoryOpened || isShopOpened) return;
         
-        if (isSkillTreeOpened) gamemodeParent.GetInputManager().EnableHUDInteraction();
-        else gamemodeParent.GetInputManager().DisableHUDInteraction();
+        //if (isSkillTreeOpened) gamemodeParent.GetInputManager().EnableHUDInteraction();
+        // gamemodeParent.GetInputManager().DisableHUDInteraction();
 
         isSkillTreeOpened = !isSkillTreeOpened;
         skillTreePanel.SetActive(isSkillTreeOpened);
@@ -75,17 +75,26 @@ public class UIManager : GamemodeSubsystem
     {
         gamemodeParent.GetHUD().CloseHotbarInstant();
         
-        gamemodeParent.GetInputManager().EnableHUDInteraction();
+        //Inventory
+        isInventoryOpened = false;
+        inventoryPanel.SetActive(false);
+        inventoryInfoPanel.SetActive(false);
         
-        CloseMenus();
+        //SkillTree
+        isSkillTreeOpened = false;
+        skillTreePanel.SetActive(false);
+        skillTreeInfoPanel.SetActive(false);
+        
+        //gamemodeParent.GetInputManager().EnableHUDInteraction();
+
         isShopOpened = true;
-        gamemodeParent.GetInputManager().DisableGameplay();
+        //gamemodeParent.GetInputManager().DisableGameplay();
         shopManager.ShowMenu(shopData);
     }
     
     public void CloseMenus()
     {
-        gamemodeParent.GetInputManager().EnableGameplay();
+        //gamemodeParent.GetInputManager().EnableGameplay();
         
         //Inventory
         isInventoryOpened = false;
@@ -100,6 +109,11 @@ public class UIManager : GamemodeSubsystem
         //Shop
         isShopOpened = false;
         shopManager.HideMenu();
+    }
+
+    public void CloseShop()
+    {
+        isShopOpened = false;
     }
 
     public void OnDie()
