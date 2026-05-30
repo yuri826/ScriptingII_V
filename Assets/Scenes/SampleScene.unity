@@ -9074,8 +9074,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.899902, y: 56}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.89990234, y: 53}
+  m_SizeDelta: {x: 216, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647459167
 MonoBehaviour:
@@ -9097,7 +9097,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mission Name
+  m_text: Defeat the Wizard
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
   m_sharedMaterial: {fileID: -143273055690969752, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
@@ -9124,8 +9124,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
-  m_fontSizeBase: 48
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19422,7 +19422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mission description Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem '
+  m_text: Go to the palace and defear the four armed wizard.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
   m_sharedMaterial: {fileID: -143273055690969752, guid: bba0a98ca88b95143b48095fa81182d3, type: 2}
@@ -26331,15 +26331,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4656387361938995963, guid: ef75829189c9e6246b2d46a8e6d843f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.935
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4656387361938995963, guid: ef75829189c9e6246b2d46a8e6d843f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.193
+      value: 1.2965001
       objectReference: {fileID: 0}
     - target: {fileID: 4656387361938995963, guid: ef75829189c9e6246b2d46a8e6d843f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -61.5
       objectReference: {fileID: 0}
     - target: {fileID: 4656387361938995963, guid: ef75829189c9e6246b2d46a8e6d843f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26375,7 +26375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8664038799532427017, guid: ef75829189c9e6246b2d46a8e6d843f1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
